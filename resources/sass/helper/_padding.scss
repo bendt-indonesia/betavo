@@ -1,0 +1,99 @@
+@for $i from 0 through 30 {
+    .p-#{$i*5} {
+        padding: #{$i*5}px;
+    }
+}
+@for $i from 0 through 30 {
+    .pt-#{$i*5} {
+        padding-top: #{$i*5}px;
+    }
+}
+@for $i from 0 through 30 {
+    .pr-#{$i*5} {
+        padding-right: #{$i*5}px;
+    }
+}
+@for $i from 0 through 30 {
+    .pb-#{$i*5} {
+        padding-bottom: #{$i*5}px;
+    }
+}
+@for $i from 0 through 30 {
+    .pl-#{$i*5} {
+        padding-left: #{$i*5}px;
+    }
+}
+@for $i from 0 through 30 {
+    .ptb-#{$i*5} {
+        padding-top: #{$i*5}px;
+        padding-bottom: #{$i*5}px;
+    }
+}
+
+@media (max-width: 991px) {
+    @for $i from 0 through 30 {
+        .p-#{$i*5} {
+            padding: #{$i*5*0.75}px;
+        }
+    }
+    @for $i from 0 through 30 {
+        .pt-#{$i*5} {
+            padding-top: #{$i*5*0.75}px;
+        }
+    }
+    @for $i from 0 through 30 {
+        .pr-#{$i*5} {
+            padding-right: #{$i*5*0.75}px;
+        }
+    }
+    @for $i from 0 through 30 {
+        .pb-#{$i*5} {
+            padding-bottom: #{$i*5*0.75}px;
+        }
+    }
+    @for $i from 0 through 30 {
+        .pl-#{$i*5} {
+            padding-left: #{$i*5*0.75}px;
+        }
+    }
+    @for $i from 0 through 30 {
+        .ptb-#{$i*5} {
+            padding-top: #{$i*5*0.75}px;
+            padding-bottom: #{$i*5*0.75}px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    @for $i from 0 through 30 {
+        .p-#{$i*5} {
+            padding: #{$i*5/2}px;
+        }
+    }
+    @for $i from 0 through 30 {
+        .pt-#{$i*5} {
+            padding-top: #{$i*5/2}px;
+        }
+    }
+    @for $i from 0 through 30 {
+        .pr-#{$i*5} {
+            padding-right: #{$i*5/2}px;
+        }
+    }
+    @for $i from 0 through 30 {
+        .pb-#{$i*5} {
+            padding-bottom: #{$i*5/2}px;
+        }
+    }
+    @for $i from 0 through 30 {
+        .pl-#{$i*5} {
+            padding-left: #{$i*5/2}px;
+        }
+    }
+    @for $i from 0 through 30 {
+        .ptb-#{$i*5} {
+            padding-top: #{$i*5/2}px;
+            padding-bottom: #{$i*5/2}px;
+        }
+    }
+}

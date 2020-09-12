@@ -1,0 +1,295 @@
+<?php
+
+namespace App\Console\Commands;
+
+use App\Bendt\BendtServices;
+use App\Enums\Commands;
+use Illuminate\Console\Command;
+
+class BendtRun extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'bendt:run';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Copyrighted PT Bendt Sistem Indonesia';
+
+    protected $overwriteFile = [
+        'app/StoreMapper',
+        'app/Helper',
+        'app/Http/Controllers/Backend/AdminController',
+        'app/Http/Controllers/Backend/AccountController',
+        'app/Http/Controllers/ContactController',
+        'app/Http/Controllers/DefaultController',
+        'app/Http/Kernel',
+        'app/Providers/AppServiceProvider',
+        'app/Providers/RouteServiceProvider',
+        'config/cors',
+        'config/bendt-auth',
+        'public/filemanager/config/config',
+        'resources/views/backend/config/config.blade',
+        'resources/views/backend/include/bheader.blade',
+        'resources/views/backend/dashboard.blade',
+        'resources/views/include/footer.blade',
+        'resources/views/include/header.blade',
+        'resources/views/layouts/auth.blade',
+        'resources/views/layouts/backend.blade',
+        'resources/views/layouts/email.blade',
+        'resources/views/layouts/frontend.blade',
+        'routes/backend',
+        'routes/web',
+        'database/seeds/BendtSeeder',
+    ];
+
+    protected $userMenu = [
+        'Install Package',
+        'Run Seeder',
+        'Reverse Seeder',
+        'See Guide'
+    ];
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return mixed
+     */
+    public function handle()
+    {
+
+        $this->welcome_message();
+
+        $opt = $this->choice('I would like to ', $this->userMenu, 3);
+
+        $this->c_log($opt);
+        switch ($opt) {
+            case $this->userMenu[0]:
+                $this->install();
+                break;
+            case $this->userMenu[1]:
+                $this->seeder();
+                break;
+            case $this->userMenu[2]:
+                $this->reverse_seeder();
+                break;
+            case $this->userMenu[3]:
+                $this->help();
+                break;
+            default:
+                $this->help();
+                break;
+        }
+    }
+
+    private function welcome_message()
+    {
+        $this->c_log(' ____                 _ _    ');
+        $this->c_log('|  _ \               | | |   ');
+        $this->c_log('| |_) | ___ _ __   __| | |   ');
+        $this->c_log("|  _ < / _ \ '_ \ / _` | __| ");
+        $this->c_log("| |_) |  __/ | | | (_| | |_  ");
+        $this->c_log("|____/ \___|_| |_|\__,_|\__| ");
+        $this->c_log("|                          |");
+        $this->c_log("|         Hi Folks!        |");
+        $this->c_log("|__________________________|");
+        $this->c_log("Here's our menu:");
+    }
+
+    private function help()
+    {
+        $this->c_log('This is an automated installer made by Ben, to help initialized the project.');
+        $this->c_log("There's function or module in this installer:");
+        $this->c_log("---------------------------------------------");
+        $this->c_log("1. " . $this->userMenu[0]);
+        $this->c_log("After you download the package from app.bendt.io, it can be used until you install the package using this function.");
+        $this->c_log("You may encounter to re-run the command on the first step (1/7) because the composer need to be updated before can proceed to next installation step.");
+        $this->c_log("---------------------------------------------");
+        $this->c_log("2. " . $this->userMenu[1]);
+        $this->c_log("After you install the package from menu above, you may want to seed the database from configuration you described in the app.bendt.io");
+        $this->c_log("This function should be invoked manually to prevent duplicating data the next time you run seed / refresh");
+        $this->c_log("---------------------------------------------");
+        $this->c_log("3. " . $this->userMenu[2]);
+        $this->c_log("After the CMS running, you may update the data using the website interface at URL [localdevelopmenturl]/backend. BUT to update the seeder so that the inputted data can be used in another environment, you must do the reverse seeder.");
+        $this->c_log("Reverse seeder automatically create/update the prerequisites table and added it to DatabaseSeeder file.");
+        $this->c_log("Other environment means other people work in the same project, or even deployed on customer environment");
+        $this->c_log("NEVER update the prequisities (SeederFile) that generated by reverse seeder, because it will be overridden by the time you run this reverse seeder in the future.");
+        $this->c_log("---------------------------------------------");
+        $this->c_log('If you found this guide still confusing, you can ask us a question to Ben');
+        $this->c_log('The first time is always be the hardest. Don\'t Give Up!');
+        $this->c_log("---------------------------------------------");
+    }
+
+    private function install()
+    {
+        $this->c_log('Executing: '.$this->userMenu[0]);
+
+        if ($this->check_requiredFiles()) {
+            $this->c_log('[ERROR] Some File(s) missing, please unzip the downloaded package again..');
+            //return;
+        }
+
+        if (!$this->is_windows()) {
+            exec('chmod +x composer');
+        }
+
+        //Step 1
+        $this->c_log('1. Installing package naucon/file');
+        if (!$this->check_naucon()) {
+            exec('composer require naucon/file');
+            $this->c_log('Installation postponed, please re-run the command..');
+            return true;
+        }
+        $this->c_log('>> (1/7) Successfully installed naucon/file');
+
+        //Step 2
+        $this->c_log('2. Installing package bendt/auth..');
+        if (!BendtServices::check_composer_package('bendt/auth')) {
+            exec('composer require bendt/auth');
+        }
+        $this->c_log('>> (2/7) Successfully installed bendt/auth');
+
+        //Step 3
+        $this->c_log('3. Installing package bendt/autocms');
+        if (!BendtServices::check_composer_package('bendt/autocms')) {
+            exec('composer require bendt/autocms');
+        }
+        $this->c_log('>> (3/7) Successfully installed bendt/autocms');
+
+        //Step 4
+        $this->c_log('4. Installing package orangehill/iseed');
+        if (!BendtServices::check_composer_package('orangehill/iseed')) {
+            exec('composer require orangehill/iseed');
+        }
+        $this->c_log('>> (4/7) Successfully installed bendt/autocms');
+
+        //Step 5
+        $this->c_log('5. Committing Files..');
+        $files = $this->check_overwriteFiles();
+        $this->c_log('>> (5/7) Total ' . $files['commit'] . ' Files Committed & ' . $files['skip'] . ' Skipped');
+
+
+        //Step 6
+        $this->c_log('6. Updating composer.json');
+        BendtServices::check_should_update_composer_json();
+        $this->c_log('>> (6/7) Successfully updated composer.json');
+
+        //Step 7
+        $this->c_log('7. Composer Dump Autoload');
+        exec('composer dump-autoload');
+        $this->c_log('>> (7/7) Succeed..');
+        $this->c_log('Done.');
+    }
+
+    private function seeder() {
+        $this->c_log('Executing: '.$this->userMenu[1]);
+        exec('php artisan db:seed --class=BendtSeeder');
+        $this->c_log('Done.');
+    }
+
+    private function reverse_seeder() {
+        $this->c_log('Executing: '.$this->userMenu[2]);
+        exec('php artisan iseed config,language,page,page_element,page_group,page_list,page_list_detail,page_list_element,page_list_preset --force');
+        $this->c_log('Done.');
+    }
+
+    private function check_naucon()
+    {
+        if (!file_exists('vendor/naucon/')) {
+            return false;
+        }
+        return true;
+    }
+
+    private function check_requiredFiles()
+    {
+        $miss = false;
+        if (!file_exists('composer')) {
+            $this->c_log('File Not Found: composer');
+            $miss = true;
+        }
+        foreach ($this->overwriteFile as $file) {
+            if (!file_exists($file)) {
+                $this->c_log('File Not Found: ' . $file);
+                $miss = true;
+            }
+        }
+
+        return $miss;
+    }
+
+    private function check_overwriteFiles($cmd = 'bash')
+    {
+        $commit = 0;
+        $skip = 0;
+        foreach ($this->overwriteFile as $file) {
+            $check = file_exists($file . ".php");
+            if (!$check) {
+                $commit++;
+                $this->smart_exec(Commands::MOVE, $file . ' ' . $file . '.php');
+
+            } else {
+                $this->c_log('WARNING! file ' . $file . '.php already existed and may be replaced');
+                $confirm = $this->confirm('Replace the file ?');
+                if ($confirm) {
+                    $commit++;
+
+                    $this->smart_exec(Commands::REMOVE, $file . '.php');
+                    $this->smart_exec(Commands::MOVE, $file . ' ' . $file . '.php');
+                } else {
+                    $skip++;
+                    $this->c_log('Skip File..');
+                }
+            }
+        }
+
+        return [
+            'commit' => $commit,
+            'skip' => $skip,
+        ];
+    }
+
+    private function c_log($msg)
+    {
+        echo '>>>>> ' . $msg . PHP_EOL;
+    }
+
+    private function smart_exec($type, $command)
+    {
+        $is_win = $this->is_windows(); //return 1 or 0
+
+        if (in_array($type, Commands::$COMMANDS)) {
+            if ($is_win) {
+                $command = str_replace("/", "\\", $command);
+                exec(Commands::$WINDOWS[$type] . " " . $command);
+            } else {
+                exec(Commands::$BASH[$type] . " " . $command);
+            }
+        } else {
+            $this->c_log('WARNING! command ' . $type . ' is not registered as smart command, using the command itself.');
+            exec($type . ' ' . $command);
+        }
+    }
+
+    private function is_windows()
+    {
+        return strtoupper(substr(PHP_OS, 0, 3)) === 'WIN' ? 1 : 0;
+    }
+
+}

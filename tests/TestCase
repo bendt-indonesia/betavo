@@ -1,0 +1,98 @@
+<?php
+namespace Tests;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+use Faker\Factory as Faker;
+
+use App\Models\OauthClients;
+
+
+/**
+ * Class TestCase
+ * @package Tests
+ * @runTestsInSeparateProcesses
+ * @preserveGlobalState disabled
+ */
+abstract class TestCase extends BaseTestCase
+{
+    use CreatesApplication, DatabaseMigrations, DatabaseTransactions;
+
+    /**
+     * @var bool
+     */
+    protected $useDatabase = true;
+
+    protected $faker;
+
+    /**
+     * Set up the test
+     */
+    public function setUp(): void
+    {
+        parent::setUp();
+        if (env('TEST_USE_DATABASE')) {
+            $this->setUpDb();
+        }
+
+        $this->oauthLogin();
+
+        $this->faker = Faker::create();
+    }
+
+    /**
+     * Reset the migrations
+     */
+    public function tearDown(): void
+    {
+        $this->artisan('migrate:reset');
+        parent::tearDown();
+    }
+
+    /**
+     * Set up the database for tests
+     *
+     */
+    public function setUpDb()
+    {
+        $this->artisan('migrate --seed');
+    }
+
+    protected function headers()
+    {
+        $headers = [
+            'Accept' => 'application/json',
+            'Authorization' => 'Bearer ' . $this->token,
+        ];
+
+        return $headers;
+    }
+
+    /**
+     * @group apilogintests
+     */
+    public function oauthLogin() {
+        $oauth_client_id = env('TEST_PASSPORT_CLIENT_ID');
+        $oauth_client = OauthClients::findOrFail($oauth_client_id);
+
+        $body = [
+            'client_id' => $oauth_client_id,
+            'client_secret' => $oauth_client->secret,
+            'grant_type' => 'password',
+            'username' => 'admin',
+            'password' => 'admin',
+            'scope' => ''
+        ];
+
+        $response = $this->json('POST','/oauth/token',$body,['Accept' => 'application/json'])
+            ->assertStatus(200)
+            ->assertJsonStructure(['token_type','expires_in','access_token','refresh_token']);
+
+        $token = $response->json()['access_token'];
+
+        $this->headers = [
+            'Accept' => 'application/json',
+            'Authorization' => 'Bearer ' . $token,
+        ];
+    }
+}

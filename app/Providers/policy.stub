@@ -1,0 +1,4 @@
+\App\Models\ClientMessages::class => \App\Data\ClientMessages\ClientMessagesPolicy::class,
+\App\Models\Produk::class => \App\Data\Produk\ProdukPolicy::class,
+\App\Models\ProdukKategori::class => \App\Data\ProdukKategori\ProdukKategoriPolicy::class,
+\App\Models\ProdukSubKategori::class => \App\Data\ProdukSubKategori\ProdukSubKategoriPolicy::class,
