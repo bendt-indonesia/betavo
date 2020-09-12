@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "93a19bc8b663a8c1b6d49c6306cdf42c",
+    "content-hash": "77b5bab1933bf05d1bf2be79f68554e2",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -96,6 +96,104 @@
                 "stack"
             ],
             "time": "2019-12-24T22:41:47+00:00"
+        },
+        {
+            "name": "bendt/auth",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bendt-indonesia/auth.git",
+                "reference": "9672cef22bf7b2196f29273841d2698f1fd2c119"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bendt-indonesia/auth/zipball/9672cef22bf7b2196f29273841d2698f1fd2c119",
+                "reference": "9672cef22bf7b2196f29273841d2698f1fd2c119",
+                "shasum": ""
+            },
+            "type": "laravel",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Bendt\\Auth\\AuthServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Bendt\\Auth\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ben Walandow",
+                    "email": "contact@bendt.io",
+                    "homepage": "https://bendt.io"
+                },
+                {
+                    "name": "HUPERCLOUD",
+                    "email": "huperseo@gmail.com",
+                    "homepage": "https://www.hupercloud.com"
+                }
+            ],
+            "description": "Laravel Auth Package",
+            "homepage": "https://bendt.io",
+            "time": "2020-09-09T08:51:13+00:00"
+        },
+        {
+            "name": "bendt/autocms",
+            "version": "1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bendt-indonesia/autocms.git",
+                "reference": "3e4a28e03c346eed6e23a77295e62a7483f844a0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bendt-indonesia/autocms/zipball/3e4a28e03c346eed6e23a77295e62a7483f844a0",
+                "reference": "3e4a28e03c346eed6e23a77295e62a7483f844a0",
+                "shasum": ""
+            },
+            "require": {
+                "intervention/image": "^2.4",
+                "php": ">=7.1.3"
+            },
+            "type": "laravel",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Bendt\\Autocms\\CMSServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Bendt\\Autocms\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ben Walandow",
+                    "email": "contact@bendt.io",
+                    "homepage": "https://bendt.io"
+                },
+                {
+                    "name": "HUPERCLOUD",
+                    "email": "huperseo@gmail.com",
+                    "homepage": "https://www.hupercloud.com"
+                }
+            ],
+            "description": "CMS Tools for Laravel ^5.8 and ^6.0",
+            "homepage": "https://bendt.io",
+            "time": "2020-08-16T05:43:11+00:00"
         },
         {
             "name": "brick/math",
@@ -739,6 +837,76 @@
             "time": "2019-07-01T23:21:34+00:00"
         },
         {
+            "name": "intervention/image",
+            "version": "2.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/image.git",
+                "reference": "abbf18d5ab8367f96b3205ca3c89fb2fa598c69e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/abbf18d5ab8367f96b3205ca3c89fb2fa598c69e",
+                "reference": "abbf18d5ab8367f96b3205ca3c89fb2fa598c69e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-fileinfo": "*",
+                "guzzlehttp/psr7": "~1.1",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.2",
+                "phpunit/phpunit": "^4.8 || ^5.7"
+            },
+            "suggest": {
+                "ext-gd": "to use GD library based image processing.",
+                "ext-imagick": "to use Imagick based image processing.",
+                "intervention/imagecache": "Caching extension for the Intervention Image library"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Intervention\\Image\\ImageServiceProvider"
+                    ],
+                    "aliases": {
+                        "Image": "Intervention\\Image\\Facades\\Image"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Intervention\\Image\\": "src/Intervention/Image"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@olivervogel.com",
+                    "homepage": "http://olivervogel.com/"
+                }
+            ],
+            "description": "Image handling and manipulation library with support for Laravel integration",
+            "homepage": "http://image.intervention.io/",
+            "keywords": [
+                "gd",
+                "image",
+                "imagick",
+                "laravel",
+                "thumbnail",
+                "watermark"
+            ],
+            "time": "2019-11-02T09:15:47+00:00"
+        },
+        {
             "name": "jeroennoten/laravel-adminlte",
             "version": "v3.3.1",
             "source": {
@@ -1304,6 +1472,108 @@
             "time": "2020-05-22T08:12:19+00:00"
         },
         {
+            "name": "naucon/file",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/naucon/File.git",
+                "reference": "447d4e9d3e645192e996bde8f3d91669a6b4f996"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/naucon/File/zipball/447d4e9d3e645192e996bde8f3d91669a6b4f996",
+                "reference": "447d4e9d3e645192e996bde8f3d91669a6b4f996",
+                "shasum": ""
+            },
+            "require": {
+                "naucon/utility": "~1.0",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.8.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Naucon\\File\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sven Sanzenbacher"
+                }
+            ],
+            "description": "This package contains php classes to access, change, copy, delete, move, rename files and directories.",
+            "homepage": "https://github.com/naucon/File",
+            "keywords": [
+                "copy",
+                "delete",
+                "dir",
+                "file",
+                "filesystem",
+                "io",
+                "move",
+                "rename"
+            ],
+            "time": "2018-03-09T14:09:29+00:00"
+        },
+        {
+            "name": "naucon/utility",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/naucon/Utility.git",
+                "reference": "d225bb5d09d82400917f710c9d502949a66442c4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/naucon/Utility/zipball/d225bb5d09d82400917f710c9d502949a66442c4",
+                "reference": "d225bb5d09d82400917f710c9d502949a66442c4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.8.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Naucon\\Utility\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sven Sanzenbacher"
+                }
+            ],
+            "description": "This package provides miscellaneous php interfaces and classes to structure and organize data as well as groups of objects",
+            "homepage": "https://github.com/naucon/Utility",
+            "keywords": [
+                "collection",
+                "composite",
+                "delegate",
+                "iterable",
+                "iterator",
+                "list",
+                "map",
+                "observer",
+                "paginator",
+                "set",
+                "utility"
+            ],
+            "time": "2017-05-25T16:43:53+00:00"
+        },
+        {
             "name": "nesbot/carbon",
             "version": "2.35.0",
             "source": {
@@ -1488,6 +1758,65 @@
                 "serialize"
             ],
             "time": "2020-06-17T14:59:55+00:00"
+        },
+        {
+            "name": "orangehill/iseed",
+            "version": "v2.6.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/orangehill/iseed.git",
+                "reference": "03c73d3f829a74065e14a757f0d749ad4928a15f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/orangehill/iseed/zipball/03c73d3f829a74065e14a757f0d749ad4928a15f",
+                "reference": "03c73d3f829a74065e14a757f0d749ad4928a15f",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.5.0|~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0|^8.0",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "illuminate/filesystem": "~5.5.0|~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0|^8.0",
+                "laravel/framework": "~5.5.0|~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0|^8.0",
+                "mockery/mockery": "^1.0.0",
+                "phpunit/phpunit": "^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Orangehill\\Iseed\\IseedServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Orangehill\\Iseed": "src/"
+                },
+                "classmap": [
+                    "src/Orangehill/Iseed/Exceptions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Tihomir Opacic",
+                    "email": "tihomir.opacic@orangehilldev.com"
+                }
+            ],
+            "description": "Generate a new Laravel database seed file based on data from the existing database table.",
+            "keywords": [
+                "artisan",
+                "generators",
+                "laravel",
+                "seed"
+            ],
+            "time": "2020-09-10T06:25:21+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -5066,6 +5395,7 @@
             "keywords": [
                 "tokenizer"
             ],
+            "abandoned": true,
             "time": "2019-09-17T06:23:10+00:00"
         },
         {
@@ -5927,7 +6257,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "bendt/auth": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

@@ -1,7 +1,0 @@
-<?php
-
-Route::get('/contact', 'ContactController@index')->name('contact');
-Route::post('/contact', [
-    'middleware'=>['recaptcha'],
-    'uses' => 'ContactController@sendContactForm'
-]);

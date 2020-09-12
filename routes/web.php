@@ -1,18 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', 'ComproController@showIndex');
 Route::get('/kategori', 'ComproController@showCategory');
 Route::get('/produk', 'ComproController@showProductDetail');
@@ -39,6 +26,9 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/', 'HomeController@index')->name('home');
     Route::post('/deleteprodukimage','ProdukController@removeImage')->name('delete-produk-image');
 });
-Auth::routes(['register' => false, 'reset' => false]);
 
-
+Route::get('/contact', 'ContactController@index')->name('contact');
+Route::post('/contact', [
+    'middleware'=>['recaptcha'],
+    'uses' => 'ContactController@sendContactForm'
+]);
