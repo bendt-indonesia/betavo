@@ -5,6 +5,29 @@
     "footer_bg" => false,
 ])
 
+<?php
+$link = 'lihat disini '.Request::url();
+$title = 'Produk '.$produk->produk_sub_kategori->nama_sub_kategori.' dari Betavo '.$produk->nama_produk;
+$body = $title.', '.$link;
+?>
+
+@section('head')
+    <meta property="og:title" content="{{$produk->meta_title}}" />
+    <meta property="og:type" content="text/html" />
+    <meta property="og:url" content="{{Request::url()}}" />
+    <meta property="og:image" content="{{$produk->image_url_1}}" />
+    <meta property="og:image:width" content="500" />
+    <meta property="og:image:height" content="500" />
+    <meta property="og:site_name" content="Betavo Audio - Indonesia" />
+    <meta property="og:description" content="{{$body}}" />
+    <meta name="twitter:card" content="summary" /> <!--The card type, which will be one of “summary”, “summary_large_image”, “app”, or “player”. -->
+    <meta name="twitter:site" content="@hupercloud" />
+    <meta name="twitter:domain" content="www.betavoaudio.com" />
+    <meta name="twitter:title" content="{{$produk->meta_title}}" />
+    <meta name="twitter:description" content="{{$body}}" />
+    <meta name="twitter:image" content="{{$produk->image_url_1}}" />
+@endsection
+
 @section('bottom')
     @if($produk->youtube_video_url_1 != '')
         <div id="youtubePreview" class="modalImg">
@@ -88,14 +111,11 @@
                             </div>
                             <div class="d-block mt-4 mb-4">
                                 <p>Bagikan Produk:</p>
-                                <?php
-                                    $link = 'lihat disini '.Request::url();
-                                    $title = 'Produk '.$produk->produk_sub_kategori->nama_sub_kategori.' dari Betavo '.$produk->nama_produk;
-                                    $body = $title.', '.$link;
-                                ?>
-                                <a class="mr-3 text-white pointer" href="mailto:betavo.audio@gmail.com&subject={{$title}}&body={{$body}}"><img src="{{asset('/static/email.png')}}" class="icon-mp"></a>
-                                <a class="mr-2 text-white pointer" href="https://wa.me/?text={{$body}}"><img src="{{asset('/static/wachat.svg')}}" class="icon-mp-60"></a>
-                                <a class="mr-4 text-white pointer" href="https://t.me/share/url?url={{$produk->nama_produk}}&text={{$title}}"><img src="{{asset('/static/telegram.png')}}" class="icon-mp"></a>
+                                <a class="mr-4 text-white pointer" href="https://www.facebook.com/sharer/sharer.php?u={{Request::url()}}"><img src="{{asset('/static/Betavo_Icons_Facebook.svg')}}" class="icon-mp"></a>
+                                <a class="mr-4 text-white pointer" href="https://twitter.com/intent/tweet?text={{$body}}"><img src="{{asset('/static/Betavo_Icons_Twitter.svg')}}" class="icon-mp"></a>
+                                <a class="mr-4 text-white pointer" href="https://wa.me/?text={{$body}}"><img src="{{asset('/static/Betavo_Icons_Whatsapp.svg')}}" class="icon-mp"></a>
+                                <a class="mr-4 text-white pointer" href="https://t.me/share/url?url={{$produk->nama_produk}}&text={{$title}}"><img src="{{asset('/static/Betavo_Icons_Telegram.svg')}}" class="icon-mp"></a>
+                                <a class="mr-4 text-white pointer" href="mailto:betavo.audio@gmail.com&subject={{$title}}&body={{$body}}"><img src="{{asset('/static/Betavo_Icons_Email.svg')}}" class="icon-mp"></a>
                             </div>
                             <div class="d-block mt-2 mb-4">
                                 <div class="sharethis-inline-share-buttons"></div>

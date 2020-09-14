@@ -12,21 +12,6 @@
     <meta name="author" content="Bendt Indonesia">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <meta property="og:title" content="" />
-    <meta property="og:type" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:image" content="" />
-    <meta property="og:image:width" content="470" />
-    <meta property="og:image:height" content="246" />
-    <meta property="og:site_name" content="" />
-    <meta property="og:description" content="" />
-    <meta name="twitter:card" content="" />
-    <meta name="twitter:site" content="" />
-    <meta name="twitter:domain" content="" />
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:description" content="" />
-    <meta name="twitter:image" content="" />
-
     <!-- Mobile Specific Metas
     ================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
