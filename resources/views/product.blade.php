@@ -15,7 +15,7 @@ $body = $title.', '.$link;
     <meta property="og:title" content="{{$produk->meta_title}}" />
     <meta property="og:type" content="text/html" />
     <meta property="og:url" content="{{Request::url()}}" />
-    <meta property="og:image" content="{{Storage::url($produk->image_url_1)}}" />
+    <meta property="og:image" content="{{Url::to(Storage::url($produk->image_url_1))}}" />
     <meta property="og:image:width" content="500" />
     <meta property="og:image:height" content="500" />
     <meta property="og:site_name" content="Betavo Audio - Indonesia" />
