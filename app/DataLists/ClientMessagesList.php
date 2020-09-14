@@ -8,7 +8,7 @@ class ClientMessagesList {
 	];
 
 	public static $with_relations = [
-		'index' => ,
+		'index' => [],
 		'common' => [],
 	];
 

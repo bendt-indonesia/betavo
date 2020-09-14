@@ -8,7 +8,7 @@ class ProdukList {
 	];
 
 	public static $with_relations = [
-		'index' => ,
+		'index' => [],
 		'common' => [],
 	];
 
@@ -31,6 +31,7 @@ class ProdukList {
 			'image_url_4',
 			'image_url_5',
 			'youtube_video_url_1',
+			'is_active',
 	public static function common() {
 		return [
 			'id' => 'multi',

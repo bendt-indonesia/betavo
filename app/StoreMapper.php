@@ -3,6 +3,7 @@
 namespace App;
 
 use App\User;
+use App\Models\ProdukKategori;
 
 class StoreMapper
 {
@@ -12,6 +13,8 @@ class StoreMapper
         {
             case 'users':
                 return function() { return User::all(); };
+            case 'category':
+                return function() { return ProdukKategori::with('produk_sub_kategori')->where('is_active',1)->get(); };
             default:
                 return null;
         }

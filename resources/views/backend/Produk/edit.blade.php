@@ -20,18 +20,18 @@
                     </h5>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{route('backend.produk.update',['id'=>$model->id])}}" enctype="multipart/form-data" autocomplete="off">
+                    <form method="POST" action="{{route('backend.produk.update',['produk'=>$model->id])}}" enctype="multipart/form-data" autocomplete="off">
                         {{csrf_field()}}
                         <input type="hidden" name="_method" value="PATCH">
                         <div class="form-body">
 							<div class="form-group">
 							    <label for="meta_title">Meta Title</label>
 							    <input type="text" class="form-control " id="meta_title" name="meta_title"
-							           value="{{old("meta_title",$model->meta_title)}}" required/>
+							           value="{{old("meta_title",$model->meta_title)}}" placeholder='Judul yang muncul di pencarian Google, (default dari Nama Produk)' required/>
 							</div>
 
 							<div class="form-group">
-							    <label for="meta_description">Description</label>
+							    <label for="meta_description">Meta Description</label>
 							    <textarea rows="4" class="form-control "
 							         id="meta_description"
 							         name="meta_description"
@@ -39,7 +39,7 @@
 							</div>
 
 							<div class="form-group">
-							    <label for="meta_keywords">Keywords</label>
+							    <label for="meta_keywords">Meta Keywords</label>
 							    <textarea rows="4" class="form-control "
 							         id="meta_keywords"
 							         name="meta_keywords"
@@ -47,9 +47,9 @@
 							</div>
 
 							<div class="form-group">
-							    <label for="prioritas">Prioritas</label>
+							    <label for="prioritas">Urutan ke</label>
 							    <input type="number" class="form-control " id="prioritas" name="prioritas"
-							           value="{{old("prioritas",$model->prioritas)}}" required/>
+							           value="{{old("prioritas",$model->prioritas)}}" placeholder='Urutan tampilan, diurutkan dari angka kecil ke besar' required/>
 							</div>
 
 							<div class="form-group">
@@ -57,13 +57,13 @@
 							    <select class="form-control " id="id_kategori" name="id_kategori" required>
 							        <option value="">-- Select Sub Kategori --</option>
 							        @foreach($id_kategori as $item)
-							            <option {{selected('id_kategori', $item->id,$model->id_kategori)}} value="{{$item->id}}">{{$item->name}}</option>
+							            <option {{selected('id_kategori', $item->id,$model->id_kategori)}} value="{{$item->id}}">{{$item->nama_sub_kategori}}</option>
 							        @endforeach
 							    </select>
 							</div>
 
 							<div class="form-group">
-							    <label for="nama_produk">Nama Sub Kategori</label>
+							    <label for="nama_produk">Nama Produk</label>
 							    <input type="text" class="form-control " id="nama_produk" name="nama_produk"
 							           value="{{old("nama_produk",$model->nama_produk)}}" required/>
 							</div>
@@ -77,21 +77,21 @@
 							</div>
 
 							<div class="form-group">
-							    <label for="link_bukalapak">Nama Sub Kategori</label>
+							    <label for="link_bukalapak">Link Bukalapak</label>
 							    <input type="text" class="form-control " id="link_bukalapak" name="link_bukalapak"
-							           value="{{old("link_bukalapak",$model->link_bukalapak)}}" required/>
+							           value="{{old("link_bukalapak",$model->link_bukalapak)}}" placeholder='https://www.bukalapak.com'/>
 							</div>
 
 							<div class="form-group">
-							    <label for="link_shopee">Nama Sub Kategori</label>
+							    <label for="link_shopee">Link Shopee</label>
 							    <input type="text" class="form-control " id="link_shopee" name="link_shopee"
-							           value="{{old("link_shopee",$model->link_shopee)}}" required/>
+							           value="{{old("link_shopee",$model->link_shopee)}}" placeholder='https://www.shopee.co.id'/>
 							</div>
 
 							<div class="form-group">
-							    <label for="link_tokopedia">Nama Sub Kategori</label>
+							    <label for="link_tokopedia">Link Tokopedia</label>
 							    <input type="text" class="form-control " id="link_tokopedia" name="link_tokopedia"
-							           value="{{old("link_tokopedia",$model->link_tokopedia)}}" required/>
+							           value="{{old("link_tokopedia",$model->link_tokopedia)}}" placeholder='https://www.tokopedia.com'/>
 							</div>
 
 							<div class="form-group">
@@ -106,6 +106,7 @@
 							        <i class="icon fa fa-check"></i>
 							        <span class="js-fileName">Change file</span>
 							    </label>
+<small>Recommendation Size ( 750 x 750 ) px</small>
 							</div>
 
 							<div class="form-group">
@@ -120,6 +121,7 @@
 							        <i class="icon fa fa-check"></i>
 							        <span class="js-fileName">Change file</span>
 							    </label>
+<small>Recommendation Size ( 750 x 750 ) px</small>
 							</div>
 
 							<div class="form-group">
@@ -134,6 +136,7 @@
 							        <i class="icon fa fa-check"></i>
 							        <span class="js-fileName">Change file</span>
 							    </label>
+<small>Recommendation Size ( 750 x 750 ) px</small>
 							</div>
 
 							<div class="form-group">
@@ -148,6 +151,7 @@
 							        <i class="icon fa fa-check"></i>
 							        <span class="js-fileName">Change file</span>
 							    </label>
+<small>Recommendation Size ( 750 x 750 ) px</small>
 							</div>
 
 							<div class="form-group">
@@ -162,12 +166,31 @@
 							        <i class="icon fa fa-check"></i>
 							        <span class="js-fileName">Change file</span>
 							    </label>
+<small>Recommendation Size ( 750 x 750 ) px</small>
 							</div>
 
 							<div class="form-group">
 							    <label for="youtube_video_url_1">Youtube Video URL</label>
 							    <input type="text" class="form-control " id="youtube_video_url_1" name="youtube_video_url_1"
-							           value="{{old("youtube_video_url_1",$model->youtube_video_url_1)}}" required/>
+							           value="{{old("youtube_video_url_1",$model->youtube_video_url_1)}}"/>
+							</div>
+
+							<div class="form-group">
+							    <label class="control-label">Is Active</label>
+							    <div class="form-group">
+							        @foreach(["No", "Yes"] as $key => $value)
+							            <div class="radio d-inline mr-3">
+							                <label>
+							                    <input type="radio"
+							                           name="is_active"
+							                           value="{{$key}}"
+							                        {{checked_radio('is_active', $key ,$model->is_active)}}
+							                     required>
+							                    {{$value}}
+							                </label>
+							            </div>
+							        @endforeach
+							    </div>
 							</div>
 
 

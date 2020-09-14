@@ -10,10 +10,12 @@ use App\Models\ProdukKategori as Model;
 use App\Data\ProdukKategori\RequestStoreProdukKategori;
 use App\Data\ProdukKategori\RequestUpdateProdukKategori;
 
+use App\Store;
+
 
 class ProdukKategoriController extends Controller
 {
-    
+
 
     const PREFIX = 'backend.ProdukKategori';
 
@@ -27,7 +29,7 @@ class ProdukKategoriController extends Controller
     {
         try {
             $models = Model::
-				select('*');
+            select('*');
 
             return view(self::PREFIX.'.index',[
                 'data' => $models->get()
@@ -63,7 +65,7 @@ class ProdukKategoriController extends Controller
 
             $model = new Model($request->validated());
             $model->process($request->allFiles(),'create');
-
+            Store::forget('category');
             $request->session()->flash('success', 'New record (ProdukKategori) has been added!');
 
             return redirect()->route(self::PREFIX);
@@ -133,7 +135,7 @@ class ProdukKategoriController extends Controller
             $model = Model::find($id);
             $model->fill($request->validated());
             $model->process($request->allFiles());
-
+            Store::forget('category');
             $request->session()->flash('success', 'Record Updated!');
 
             return redirect()->route(self::PREFIX);
@@ -157,7 +159,7 @@ class ProdukKategoriController extends Controller
 
             $model = Model::findOrFail($id);
             $model->remove();
-
+            Store::forget('category');
             $request->session()->flash('success', 'Record removed!');
 
             return redirect()->route(self::PREFIX);

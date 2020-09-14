@@ -1,15 +1,22 @@
 const mix = require('laravel-mix');
 
-/*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
- | file for the application as well as bundling up all the JS files.
- |
- */
+mix.scripts([
+    "resources/js/vendor/jquery-1.12.4.min.js",
+    "resources/js/vendor/vegas/vegas.min.js",
+    "resources/js/vendor/swiper/swiper.min.js",
+    "resources/js/vendor/fullpage/scrolloverflow.min.js",
+    "resources/js/vendor/fullpage/jquery.fullpage.min.js",
+    "resources/js/vendor/form/jqueryvalidation.min.js",
+    "resources/js/vendor/form/form_script.js",
+    "resources/js/vendor/bootstrap/js/bootstrap.js",
+    "resources/js/vendor/classie.js",
+    "resources/js/vendor/animated-menu/segment.min.js",
+], 'public/js/vendor.min.js')
+    .js('resources/js/app.js', 'public/js/app.min.js')
+    .sass('resources/sass/app.scss', 'public/css/app.min.css');
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+if(mix.inProduction()) {
+    mix.version();
+} else {
+    mix.disableNotifications();
+}

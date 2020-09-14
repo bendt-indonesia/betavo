@@ -19,7 +19,7 @@ class ClientMessagesPolicy
      */
     public function view(User $user, Model $model)
     {
-        return $user->hasAnyRole([VIEW_CLIENT_MESSAGESreturn $user->hasAnyRole([
+        return $user->hasAnyRole(['VIEW_CLIENT_MESSAGES']);
     }
 
     /**
@@ -30,7 +30,7 @@ class ClientMessagesPolicy
      */
     public function store(User $user)
     {
-        return $user->hasAnyRole([STORE_CLIENT_MESSAGESreturn $user->hasAnyRole([
+        return $user->hasAnyRole(['STORE_CLIENT_MESSAGES']);
     }
 
     /**
@@ -42,7 +42,7 @@ class ClientMessagesPolicy
      */
     public function update(User $user, Model $model)
     {
-        return $user->hasAnyRole([UPDATE_CLIENT_MESSAGESreturn $user->hasAnyRole([
+        return $user->hasAnyRole(['UPDATE_CLIENT_MESSAGES']);
     }
 
     /**
@@ -54,7 +54,7 @@ class ClientMessagesPolicy
      */
     public function destroy(User $user, Model $model)
     {
-        return $user->hasAnyRole([DESTROY_CLIENT_MESSAGESreturn $user->hasAnyRole([
+        return $user->hasAnyRole(['DESTROY_CLIENT_MESSAGES']);
     }
 
     /**

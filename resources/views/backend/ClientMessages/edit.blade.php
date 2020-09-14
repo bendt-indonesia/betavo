@@ -20,7 +20,7 @@
                     </h5>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{route('backend.client_messages.update',['id'=>$model->id])}}" enctype="multipart/form-data" autocomplete="off">
+                    <form method="POST" action="{{route('backend.client_messages.update',['client_messages'=>$model->id])}}" enctype="multipart/form-data" autocomplete="off">
                         {{csrf_field()}}
                         <input type="hidden" name="_method" value="PATCH">
                         <div class="form-body">

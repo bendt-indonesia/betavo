@@ -24,7 +24,9 @@ class BuatTableKategori extends Migration
             $table->string('deskripsi',1000)->nullable();
 
             $table->string('slug', 1000)->nullable();
-            $table->text('lampiran')->nullable();
+            $table->text('image_url')->nullable();
+
+            $table->boolean('is_active')->default(1);
 
             $table->timestamps();
         });

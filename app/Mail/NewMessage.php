@@ -6,7 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use App\ClientMessage;
+use App\Models\ClientMessage;
 
 class NewMessage extends Mailable
 {
@@ -18,7 +18,7 @@ class NewMessage extends Mailable
      * @return void
      */
     protected $msg;
-     
+
     public function __construct(ClientMessage $msg)
     {
         $this->msg = $msg;

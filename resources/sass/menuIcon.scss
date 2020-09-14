@@ -1,0 +1,74 @@
+/* Bendt Burger - Position Top Right */
+
+$menu-icon-path-color: #fff;
+$menu-icon-width: 80px;
+$menu-icon-height: 80px;
+$menu-icon-burger-offset-x: -33px;
+$menu-icon-burger-offset-y: -14px;
+
+.menu-icon-trigger {
+    position: absolute;
+    top:0; /* burger position - top */
+    right:0; /* burger position - right*/
+    width: $menu-icon-width; /*toggle width*/
+    height: $menu-icon-height; /*toggle width*/
+    border: none;
+    background:transparent;
+}
+.menu-icon-wrapper svg path {
+    stroke: #fff;
+    stroke-width: 60px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: transparent;
+}
+
+.menu-icon-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    pointer-events: none;
+    transition: 0.1s;
+}
+
+.menu-icon-wrapper.scaled {
+    -webkit-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    transform: scale(0.5);
+}
+
+.menu-icon-wrapper svg {
+    position: absolute;
+
+    top: $menu-icon-burger-offset-y;  /* burger offset position from menu-trigger-box */
+    left: $menu-icon-burger-offset-x; /* burger offset position from menu-trigger-box */
+
+    transform: scale(0.1);
+    transform-origin: 0 0;
+}
+
+.menu-icon-wrapper svg path {
+    stroke: $menu-icon-path-color;
+    stroke-width: 60px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: transparent;
+}
+
+.menu-icon-wrapper .menu-icon-trigger {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    pointer-events: auto;
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-icon-wrapper .menu-icon-trigger:hover,
+.menu-icon-wrapper .menu-icon-trigger:focus {
+    outline: none;
+}

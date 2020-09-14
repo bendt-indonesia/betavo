@@ -1,6 +1,6 @@
 <?php
 $version = "9.13.2";
-$access_keys = "";
+$access_keys = "VnkopVTcZtq6oxmqc0g8Lt81wSq2jCDyPTdp1";
 if (session_id() == '') session_start();
 
 mb_internal_encoding('UTF-8');
@@ -30,7 +30,7 @@ setlocale(LC_CTYPE, 'en_US'); //correct transliteration
 |
 */
 
-define('USE_ACCESS_KEYS', false); // TRUE or FALSE
+define('USE_ACCESS_KEYS', TRUE); // TRUE or FALSE
 
 /*
 |--------------------------------------------------------------------------

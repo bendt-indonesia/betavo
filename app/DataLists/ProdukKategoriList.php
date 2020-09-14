@@ -8,22 +8,21 @@ class ProdukKategoriList {
 	];
 
 	public static $with_relations = [
-		'index' => ,
+		'index' => [],
 		'common' => [],
 	];
 
 	public static function index() {
 		return [
-			'id' => 'multi',
-			'sort_no' => 'like',
-			'name' => 'like',
-			'slug' => 'like',
-			'image_url' => 'like',
-			'description' => 'like',
-			'is_active' => 'like',
-		];
-	}
-
+			'id',
+			'meta_title',
+			'meta_description',
+			'meta_keywords',
+			'prioritas',
+			'nama_kategori',
+			'deskripsi',
+			'image_url',
+			'is_active',
 	public static function common() {
 		return [
 			'id' => 'multi',

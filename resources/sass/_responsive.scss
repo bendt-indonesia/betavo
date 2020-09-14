@@ -1,0 +1,39 @@
+@media only screen and (max-width: 700px) {
+    .modal-content {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .top-spacer {
+        padding-top: 8rem;
+    }
+}
+
+
+@media only screen and (min-width: 1280px){
+    .ai-menu {
+        position: relative;
+        display: inline-block;
+    }
+
+    .ai-menu-content {
+        display: none;
+        position: absolute;
+        min-width: 280px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        top:100%;
+        LEFT:0;
+        background-color:black;
+    }
+
+    .ai-menu:hover .ai-menu-content {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .container {
+        max-width: 1540px !important;
+    }
+}

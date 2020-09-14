@@ -1,0 +1,91 @@
+.font-gotham{
+    font-family: gotham !important;
+}
+body .font-title, p, input, span{
+    font-family:gotham !important;
+    font-size:1.1rem;
+}
+.section-content p{
+    font-size:1rem !important;
+}
+.force-title{
+    font-size:1.2rem !important;
+}
+.normalize-font{
+    font-size:1rem !important;
+}
+.page-link{
+    font-size:1rem !important;
+}
+.h-title, .s-title{
+    font-size:2rem !important;
+}
+@media (min-width:1200px){
+    body .font-title, p, input, span{
+        font-size:1.1rem;
+    }
+    .section-content p{
+        font-size:1.1rem !important;
+    }
+    .force-title{
+        font-size:1.3rem !important;
+    }
+    .normalize-font{
+        font-size:1.1rem !important;
+    }
+    .page-link{
+        font-size:1.1rem !important;
+    }
+    .h-title{
+        font-size:2.7rem !important;
+    }
+    .s-title{
+        font-size:2.2rem !important;
+    }
+}
+a{
+    font-weight: normal;
+    text-transform: uppercase;
+}
+a:hover{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.link-nav{
+    width:1.2rem;
+    height:1.2rem;
+}
+/* QC minta kecilin font */
+
+
+.min-height-product{
+    height:2.5rem;
+}
+.link-plain{
+    text-decoration: none !important;
+}
+
+.link-plain:hover{
+    font-weight: normal;
+}
+
+
+.mt4{
+    margin-top:40px;
+}
+.page-link{
+    background:transparent !important;
+    border:none;
+    text-decoration: none;
+}
+.page-link{
+    background:transparent !important;
+    border:none;
+    text-decoration: none;
+}
+.page-item.active .page-link{
+    text-decoration: underline !important;
+}
+.icon05{
+    opacity:0.5;
+}

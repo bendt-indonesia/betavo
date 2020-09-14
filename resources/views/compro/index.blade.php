@@ -5,7 +5,6 @@
 
   <!-- Page Title Here -->
   <title>{{isset($informasi)?$informasi->nama_brand:'Home page'}}</title>
-  <script src="https://www.google.com/recaptcha/api.js?render=6LfG-rEZAAAAAG9FFJP2yCW7w8rldipMKLB2jNSL"></script>
 
 
 
@@ -33,23 +32,13 @@
   <link rel="stylesheet" href="./fonts/poppins/stylesheet.css">
   <link rel="stylesheet" href="./fonts/ionicons.min.css">
   <link rel="stylesheet" href="./fonts/font-awesome.min.css">
-
-  <!-- Vendor CSS style -->
   <link rel="stylesheet" href="./css/pageloader.css">
-
-  <!-- Uncomment below to load individualy vendor CSS -->
   <link rel="stylesheet" href="./css/bootstrap.min.css">
-
   <link rel="stylesheet" href="./css/algoinc.css">
-
   <link rel="stylesheet" href="./js/vendor/swiper/swiper.min.css">
   <link rel="stylesheet" href="./js/vendor/vegas/vegas.min.css">
   <link rel="stylesheet" href="./js/vendor/fullpage/jquery.fullpage.min.css">
-
-  <!-- Main CSS files -->
   <link rel="stylesheet" href="./css/main.css">
-
-  <!-- add alternative CSS rules here -->
   <link rel="stylesheet" href="./css/style-default.css">
   <link rel="stylesheet" href="./fonts/betavo/betavo_font.css">
   <link rel="stylesheet" href="./css/font-styling.css">
@@ -61,7 +50,7 @@
     position: relative;
     display: inline-block;
   }
-  
+
   .ai-menu-content {
     display: none;
     position: absolute;
@@ -71,7 +60,7 @@
     LEFT:0;
     background-color:black;
   }
-  
+
   .ai-menu:hover .ai-menu-content {
     display: block;
   }
@@ -91,7 +80,7 @@
   </div>
 
   <!-- BEGIN OF page cover -->
-  
+
   <!--END OF page cover -->
 
   <!-- BEGIN OF Header navigation of the page -->
@@ -123,10 +112,10 @@
             </li>
             @endforeach
             <li class="nav-item fs-normal ai-menu d-block d-lg-none  mx-0 px-0">
-           
+
               <hr class="border border-white" />
               <div class="navbar-group group-bg w-100">
-                
+
                 <p>Apa yang anda ingin cari?</p>
                 <form action="/cari" method="get">
                 <Input type="text" name="keyword" class="text-white" placeholder="Contoh: Speaker">
@@ -249,7 +238,7 @@
 
   <!-- BEGIN OF page main content -->
   <main class="page-main fullpage-scroll anim-slide-scroll " id="mainpage">
-  
+
     <!-- Begin of home -->
     <section data-id="home" class="section section-home header-home">
     <div class="page-cover" data-color="">
@@ -266,7 +255,7 @@
             <div class="col-12 col-lg-6">
               <div class="home-left content-text">
                 <!-- NOTE:QC minta hilangkan brand identity
-                  <h1 class="h-title font-title fw-normal anim-3 " style="font-size:3rem"></span></h1> 
+                  <h1 class="h-title font-title fw-normal anim-3 " style="font-size:3rem"></span></h1>
                 -->
                 <div class="text mb-5 anim-4">
                   <p>{{isset($informasi->deskripsi_singkat)?$informasi->deskripsi_singkat:''}}</p>
@@ -321,7 +310,7 @@
     <!-- Begin of about -->
     <section data-id="about" class="section section-page fp-auto-height-responsive">
       <!-- QC minta disamakan dengan bacground atas -->
-      
+
           <div class="cover-bg pos-abs size-full bg-img w-100 h-100" data-image-src="img/background_home-min.jpg" style="background-image: url(&quot;img/background_home-min.jpg&quot;); background-repeat: no-repeat; background-position: center center; background-size: cover;"></div>
           <div class="cover-bg pos-abs size-full w-100 h-100 bg-cover-gradientradial opacity-9"></div>
 
@@ -394,7 +383,7 @@
                 <div class="slide-bg fade-1" style="filter:grayscale(100%) brightness(60%);">
                   <img class="img-block" alt="$img[0]->alt" src="{{\Storage::url($img[0]->path)}}">
                 </div>
-                
+
                 <div class="slide-content">
                   <div class="c-wrapper width-medium flex-col flex-full">
                     <div class="row no-gutters flex-full">
@@ -422,7 +411,7 @@
                     </div>
                   </div>
                 </div>
-                
+
               </div>
             </div>
             @endforeach
@@ -611,7 +600,7 @@
                       </div>
                       <div>
                         <p class="form-text-feedback col-12 form-success-visible" id="sendMessageResponse">
-                          
+
                         </p>
                       </div>
                     </div>
@@ -643,9 +632,8 @@
         </div>
         <!-- end of home footer -->
 
-        
+
       </div>
-    </section>
     </section>
     <!-- End of contact -->
 
@@ -653,24 +641,16 @@
   <!-- END OF page main content -->
 
   <!-- scripts -->
-  <!-- All Javascript plugins goes here -->
   <script src="./js/vendor/jquery-1.12.4.min.js"></script>
-
-  <!-- All vendor scripts -->
   <script src="./js/vendor/vegas/vegas.min.js"></script>
   <script src="./js/vendor/swiper/swiper.min.js"></script>
-
   <script src="./js/vendor/fullpage/scrolloverflow.min.js"></script>
   <script src="./js/vendor/fullpage/jquery.fullpage.min.js"></script>
-
-  <!-- Form script -->
   <script src="./js/vendor/form/jqueryvalidation.min.js"></script>
   <script src="./js/vendor/form/form_script.js"></script>
-
-  <!-- Javascript main files -->
   <script src="./vendor/bootstrap/js/bootstrap.js"></script>
   <script src="./js/main.js"></script>
- 
+
   <script>
   $(document).ready(function(){
     $('#kirimPesan').on('click',function(){
@@ -696,7 +676,7 @@
 
           });
         });
-        
+
       }
     });
   });

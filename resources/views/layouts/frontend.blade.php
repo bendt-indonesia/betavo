@@ -6,7 +6,9 @@
 
     <meta charset="utf-8">
     <title>{{ isset($meta_title) ? $meta_title : env('APP_NAME')  }}</title>
-    <meta name="description" content="{{ isset($meta_desc) ? $meta_desc : env('APP_NAME')  }}"/>
+    @if(isset($meta_desc))
+        <meta name="description" content="{{ $meta_desc }}"/>
+    @endif
     <meta name="author" content="Bendt Indonesia">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -41,11 +43,26 @@
 
     @yield('head')
 </head>
-<body class="royal_preloader">
-<div id="royal_preloader"></div>
-    @include('include.header')
-    @yield('content')
-    @include('include.footer')
+<body id="menu" class="body-page">
+<div class="page-loader" id="page-loader">
+    <div>
+        <div class="icon ion-spin"></div>
+        <p>loading</p>
+    </div>
+</div>
+
+@include('include.header')
+<main class="page-main fullpage-scroll anim-slide-scroll " id="mainpage">
+@yield('content')
+</main>
+@include('include.footer')
+
+@yield('bottom')
+<script>
+    window.RECAPTCHA = '{{env('RECAPTCHA')}}';
+    window.CSRF = '{{ csrf_token() }}';
+</script>
+<script src="https://www.google.com/recaptcha/api.js?render={{env('RECAPTCHA')}}"></script>
 <script src="{{mix('/js/vendor.min.js')}}"></script>
 <script src="{{mix('/js/app.min.js')}}"></script>
 

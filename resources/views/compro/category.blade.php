@@ -28,10 +28,6 @@
   <meta property="og:title" content="{{isset($informasi)?$informasi->nama_brand:''}} - {{$kategoriTerpilih->nama_kategori}}">
   <meta property="og:description" content="{{$kategoriTerpilih->meta_description}}">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="{{\Storage::url($img[0]->path)}}">
-  <meta property="og:image:secure_url" content="{{\Storage::url($img[0]->path)}}">
-  <?php $path = explode('.',$img[0]->path); ?>
-  <meta property="og:image:type" content="image/{{$path[count($path)-1]}}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
@@ -69,7 +65,7 @@
     position: relative;
     display: inline-block;
   }
-  
+
   .ai-menu-content {
     display: none;
     position: absolute;
@@ -79,12 +75,12 @@
     LEFT:0;
     background-color:black;
   }
-  
+
   .ai-menu:hover .ai-menu-content {
     display: block;
   }
 
-  
+
 }
 @media only screen and (max-width: 1023px){
   .top-spacer{
@@ -111,13 +107,13 @@
       <p>loading</p>
     </div>
   </div>
-  
+
 
   <!-- BEGIN OF page cover -->
   <div class="page-cover" style="position:fixed;">
     <!-- Cover Background -->
-    
-    <div class="cover-bg pos-abs size-full bg-img" style="filter:grayscale(100%) blur(2px);" data-image-src="{{\Storage::url($img[0]->path)}}"></div>
+
+    <div class="cover-bg pos-abs size-full bg-img" style="filter:grayscale(100%) blur(2px);" data-image-src="{{\Storage::url('about.jpg')}}"></div>
     <div class="cover-bg pos-abs size-full bg-cover-gradientradial opacity-9"></div>
 
   </div>
@@ -152,10 +148,10 @@
             </li>
             @endforeach
             <li class="nav-item fs-normal ai-menu d-block d-lg-none  mx-0 px-0">
-           
+
               <hr class="border border-white" />
               <div class="navbar-group group-bg w-100">
-                
+
                 <p>Apa yang anda ingin cari?</p>
                 <form action="/cari" method="get">
                 <Input type="text" name="keyword" class="text-white" placeholder="Contoh: Speaker">
@@ -235,14 +231,10 @@
   <!-- BEGIN OF page main content -->
   <main class="page-main fullpage-scroll anim-slide-scroll top-spacer" id="mainpage">
     <!--slider pagination -->
-    
-    </section>
     <!-- End of gallery -->
     <!-- Begin of featured-projects -->
     <section data-id="featured-projects" class="section section-page  fp-auto-height-responsive">
-
       <div class="section-margin anim">
-
         <div class="section-header align-x-center">
           <div class="width-large d-flex bd-highlight">
             <div class=" d-flex justify-content-end align-items-center">
@@ -263,7 +255,7 @@
             @if(isset($subKategoriTerpilih))
             <span class="icon icon-menu icon-arrow-a icon-anim">
               <span class="arrow-right"></span>
-            </span>  
+            </span>
             <a class="text-white" href="/kategori?nama={{urlencode($kategoriTerpilih->nama_kategori)}}&subkategori={{urlencode($subKategoriTerpilih->nama_sub_kategori)}}">{{$subKategoriTerpilih->nama_sub_kategori}}</a>
             @endif
           </div>
@@ -277,12 +269,12 @@
               @foreach($listProduk as $produk)
               <!-- item -->
               <?php $img = json_decode($produk->lampiran); ?>
-              
+
               <div class="mt-2 mt-md-4 col-12 col-md-4 col-lg-3 mb-3">
                 <a  href="/produk?nama={{urlencode($produk->nama_produk)}}" class="text-white link-plain">
                 <div class="item-grid-a">
                   <div class="item-img mt-4 mb-4 rounded-border">
-                    <img class="img imgProduk" src="{{\Storage::url($img[0]->path)}}" alt="$img[0]->alt">
+                    <img class="img imgProduk" src="{{\Storage::url('about.jpg')}}">
                   </div>
                   <div class="item-header">
                     <p class="min-height-product"><b class=" force-title">{{$produk->nama_produk}}</b></p>
@@ -303,7 +295,7 @@
                 </a>
               </div>
               @endforeach
-              
+
               @else
               <div class="mt-4 col-12 col-md-6">
               <p class="text-white">Produk belum tersedia.</p>
@@ -338,9 +330,9 @@
       </div>
       <!-- end of home footer -->
 
-        
+
       </div>
-              
+
     </section>
     <!-- End of featured-projects -->
   </main>

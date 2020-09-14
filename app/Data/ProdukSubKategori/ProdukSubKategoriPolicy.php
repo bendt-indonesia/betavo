@@ -19,7 +19,7 @@ class ProdukSubKategoriPolicy
      */
     public function view(User $user, Model $model)
     {
-        return $user->hasAnyRole([VIEW_PRODUK_SUB_KATEGORIreturn $user->hasAnyRole([
+        return $user->hasAnyRole(['VIEW_PRODUK_SUB_KATEGORI']);
     }
 
     /**
@@ -30,7 +30,7 @@ class ProdukSubKategoriPolicy
      */
     public function store(User $user)
     {
-        return $user->hasAnyRole([STORE_PRODUK_SUB_KATEGORIreturn $user->hasAnyRole([
+        return $user->hasAnyRole(['STORE_PRODUK_SUB_KATEGORI']);
     }
 
     /**
@@ -42,7 +42,7 @@ class ProdukSubKategoriPolicy
      */
     public function update(User $user, Model $model)
     {
-        return $user->hasAnyRole([UPDATE_PRODUK_SUB_KATEGORIreturn $user->hasAnyRole([
+        return $user->hasAnyRole(['UPDATE_PRODUK_SUB_KATEGORI']);
     }
 
     /**
@@ -54,7 +54,7 @@ class ProdukSubKategoriPolicy
      */
     public function destroy(User $user, Model $model)
     {
-        return $user->hasAnyRole([DESTROY_PRODUK_SUB_KATEGORIreturn $user->hasAnyRole([
+        return $user->hasAnyRole(['DESTROY_PRODUK_SUB_KATEGORI']);
     }
 
     /**

@@ -26,11 +26,11 @@
 							<div class="form-group">
 							    <label for="meta_title">Meta Title</label>
 							    <input type="text" class="form-control " id="meta_title" name="meta_title"
-							           value="{{old("meta_title")}}" required/>
+							           value="{{old("meta_title")}}" placeholder='Judul yang muncul di pencarian Google, (default dari Nama Produk)' required/>
 							</div>
 
 							<div class="form-group">
-							    <label for="meta_description">Description</label>
+							    <label for="meta_description">Meta Description</label>
 							    <textarea rows="4" class="form-control "
 							         id="meta_description"
 							         name="meta_description"
@@ -38,7 +38,7 @@
 							</div>
 
 							<div class="form-group">
-							    <label for="meta_keywords">Keywords</label>
+							    <label for="meta_keywords">Meta Keywords</label>
 							    <textarea rows="4" class="form-control "
 							         id="meta_keywords"
 							         name="meta_keywords"
@@ -46,9 +46,9 @@
 							</div>
 
 							<div class="form-group">
-							    <label for="prioritas">Prioritas</label>
+							    <label for="prioritas">Urutan ke</label>
 							    <input type="number" class="form-control " id="prioritas" name="prioritas"
-							           value="{{old("prioritas")}}" required/>
+							           value="{{old("prioritas")}}" placeholder='Urutan tampilan, diurutkan dari angka kecil ke besar' required/>
 							</div>
 
 							<div class="form-group">
@@ -75,6 +75,7 @@
 							        <i class="icon fa fa-check"></i>
 							        <span class="js-fileName">Change file</span>
 							    </label>
+<small>( 1366 x 768 ) px</small>
 							</div>
 
 							<div class="form-group">

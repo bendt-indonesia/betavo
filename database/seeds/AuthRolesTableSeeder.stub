@@ -1,8 +1,0 @@
-	private $groups = [
-		'Others' => [
-			'client_messages' => 'Pesan Pengunjung',
-			'produk' => 'List Produk',
-			'produk_kategori' => 'Kategori Produk',
-			'produk_sub_kategori' => 'Sub Kategori Produk',
-		],
-	];

@@ -19,6 +19,7 @@ class CreateClientMessageTable extends Migration
             $table->string('email');
             $table->text('name');
             $table->text('message');
+            $table->text('phone');
             $table->timestamps();
         });
     }

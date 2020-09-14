@@ -33,15 +33,16 @@ class RequestUpdateProduk extends FormRequest
 			'id_kategori' => 'required|exists:produk_sub_kategori,id',
 			'nama_produk' => 'required|max:150',
 			'deskripsi' => 'required|max:65500',
-			'link_bukalapak' => 'required|max:1000',
-			'link_shopee' => 'required|max:1000',
-			'link_tokopedia' => 'required|max:1000',
+			'link_bukalapak' => 'max:1000',
+			'link_shopee' => 'max:1000',
+			'link_tokopedia' => 'max:1000',
 			'image_url_1' => '',
 			'image_url_2' => '',
 			'image_url_3' => '',
 			'image_url_4' => '',
 			'image_url_5' => '',
-			'youtube_video_url_1' => 'required|max:150',
+			'youtube_video_url_1' => 'max:150',
+			'is_active' => 'required|in:0,1',
         ];
     }
 

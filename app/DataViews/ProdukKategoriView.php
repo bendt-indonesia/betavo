@@ -8,9 +8,9 @@ class ProdukKategoriView {
 		return [
 			'Kategori Produk',
 			[
-				'sort_no' => ['label' => 'Sort_No'],
-				'name' => ['label' => 'Name'],
-				'description' => ['label' => 'Description'],
+				'prioritas' => ['label' => 'Urutan ke'],
+				'nama_kategori' => ['label' => 'Nama Kategori'],
+				'deskripsi' => ['label' => 'Deskripsi'],
 				'is_active' => ['label' => 'Is Active'],
 			],
 			[

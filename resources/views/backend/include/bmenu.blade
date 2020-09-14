@@ -46,6 +46,15 @@ $rs4 = app('request')->input('rs4') ? app('request')->input('rs4') : Request::se
                 </li>
             @endforeach
 
+            <li class="header">Config</li>
+
+            <li class="@include('backend.include.menu.active',['crs2' => 'configs'])">
+                <a href="{{route('backend.configs')}}">
+                    <i class="fa fa-cogs"></i>
+                    <span>Config</span>
+                </a>
+            </li>
+
             <li class="treeview {{--active--}}">
                 <a href="#">
                     <i class="fa fa-files-o"></i><span>Dropdown</span>

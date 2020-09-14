@@ -40,11 +40,11 @@
 									<td>{{$item->origin}}</td>
 
                                     <td style="white-space: nowrap">
-                                        <form action="{{route('backend.client_messages.destroy', ['id' => $item->id])}}"
+                                        <form action="{{route('backend.client_messages.destroy', ['client_messages' => $item->id])}}"
                                               method="post">
                                             {{csrf_field()}}
                                             <input type="hidden" name="_method" value="DELETE">
-                                            <a href="{{route('backend.client_messages.edit', ['id' => $item->id])}}"
+                                            <a href="{{route('backend.client_messages.edit', ['client_messages' => $item->id])}}"
                                                class="btn btn-warning btn-sm">
                                                 <i class="fa fa-edit"></i>
                                             </a>

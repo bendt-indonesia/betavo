@@ -9,7 +9,7 @@
  |____/ \___|_| |_|\__,_|\__| |_____|_| |_|\__,_|\___/|_| |_|\___||___/_|\__,_|
 
  Please don't modify this file because it may be overwritten when re-generated.
- Last Update 11 Feb 2019
+ Last Update 13 Sep 2020
  */
 
 namespace App\Models;
@@ -30,8 +30,6 @@ abstract class BaseModel extends Model
 
     protected $files = [];
 
-    protected $slugProperty = null;
-
     protected $file_prefix = '';
 
     //index yang akan digunakan untuk nama file yang akan disimpan
@@ -42,6 +40,12 @@ abstract class BaseModel extends Model
     const FILE_PATH = '/base_model/';
 
     const CACHE_KEYS = [];
+
+    const INDEX_KEY = 'sort_no';
+
+    const SLUG_KEY = 'slug';
+
+    const SLUG_FROM_COLUMN = 'name';
 
 
     public function process($files = null, $request_type = 'update')
@@ -97,7 +101,9 @@ abstract class BaseModel extends Model
 
     public function processSortNo()
     {
-        if (!$this->id && in_array('sort_no', $this->processed) && is_null($this->sort_no)) {
+        if (!$this->id
+            && ( in_array('index', $this->processed) || in_array('sort_no', $this->processed) )
+            && is_null($this->{static::INDEX_KEY})) {
             $this->setIndex();
         }
     }
@@ -153,15 +159,8 @@ abstract class BaseModel extends Model
     // Slug
     public function setSlug()
     {
-        if (isset($this->slugProperty) && !is_null($this->slugProperty) && $this->slugProperty != 'name') {
-            if (array_key_exists($this->slugProperty, $this->attributes)) {
-                $slug = Str::slug($this->attributes[$this->slugProperty]);
-                $this->slug = $slug.static::_checkSlug($slug);
-            }
-        } else {
-            $slug = Str::slug($this->name);
-            $this->slug = $slug.static::_checkSlug($slug);
-        }
+        $slug = Str::slug($this->{static::SLUG_FROM_COLUMN});
+        $this->{static::SLUG_KEY} = $slug.static::_checkSlug($slug);
     }
 
     //Prefix
@@ -174,19 +173,19 @@ abstract class BaseModel extends Model
     public function setIndex()
     {
         $index = static::_getLatestIndex();
-        $this->sort_no = $index + 1;
+        $this->{static::INDEX_KEY} = $index + 1;
     }
 
     public function move($new_index)
     {
-        $list = static::where('sort_no', '>=', $new_index)->where('id', '!=', $this->id)->orderBy('sort_no')->get();
+        $list = static::where(static::INDEX_KEY, '>=', $new_index)->where('id', '!=', $this->id)->orderBy(static::INDEX_KEY)->get();
 
         DB::beginTransaction();
-        $this->sort_no = $new_index;
+        $this->{static::INDEX_KEY} = $new_index;
         $this->save();
         for ($i = 0; $i < count($list); $i++) {
             $temp = $list[$i];
-            $temp->sort_no = $new_index + $i + 1;
+            $temp->{static::INDEX_KEY} = $new_index + $i + 1;
             $temp->save();
         }
         DB::commit();
@@ -196,23 +195,23 @@ abstract class BaseModel extends Model
     public function moveByTargetId($target_id)
     {
         $target = static::find($target_id);
-        $new_index = $target->sort_no;
+        $new_index = $target->{static::INDEX_KEY};
 
-        $list = static::where('sort_no', '>', $new_index)->where('id', '!=', $this->id)->orderBy('sort_no')->get();
+        $list = static::where(static::INDEX_KEY, '>', $new_index)->where('id', '!=', $this->id)->orderBy(static::INDEX_KEY)->get();
 
         DB::beginTransaction();
         if (count($list) == 0) {
-            $this->sort_no = $new_index + 1;
+            $this->{static::INDEX_KEY} = $new_index + 1;
             $this->save();
         } else {
-            $this->sort_no = $new_index;
+            $this->{static::INDEX_KEY} = $new_index;
             $this->save();
-            $target->sort_no = $new_index + 1;
+            $target->{static::INDEX_KEY} = $new_index + 1;
             $target->save();
 
             for ($i = 0; $i < count($list); $i++) {
                 $temp = $list[$i];
-                $temp->sort_no = $new_index + $i + 2;
+                $temp->{static::INDEX_KEY} = $new_index + $i + 2;
                 $temp->save();
             }
         }
@@ -223,13 +222,13 @@ abstract class BaseModel extends Model
 
     private static function _checkSlug($slug)
     {
-        $check = static::where('slug','like', $slug.'%')->count();
+        $check = static::where(static::SLUG_KEY,'like', $slug.'%')->count();
         return $check > 0 ? "-".$check : '';
     }
 
     private static function _getLatestIndex()
     {
-        $index = static::max('sort_no');
+        $index = static::max(static::INDEX_KEY);
         return is_null($index) ? 0 : $index;
     }
 

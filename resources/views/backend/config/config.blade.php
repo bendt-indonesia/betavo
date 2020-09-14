@@ -21,8 +21,6 @@
                             {!! CMSConfig::text('email') !!}
 
                             {!! CMSConfig::text('facebook') !!}
-                            {!! CMSConfig::text('twitter') !!}
-                            {!! CMSConfig::text('linkedin') !!}
                             {!! CMSConfig::text('youtube') !!}
 
                         </div>

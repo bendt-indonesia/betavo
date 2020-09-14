@@ -29,7 +29,7 @@ class RequiredLocale
     {
         $desiredLocale = $request->segment(1);
 
-        $locale = Session::has(env('LOCALE_SESS')) ? Session::get(env('LOCALE_SESS')) : locale()->fallback();
+        $locale = Session::has(env('LOCALE_SESS')) ? Session::get(env('LOCALE_SESS')) : 'id';
         $locale = locale()->isSupported($desiredLocale) ? $desiredLocale : $locale;
 
         if($desiredLocale != $locale) {

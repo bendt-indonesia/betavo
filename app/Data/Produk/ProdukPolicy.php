@@ -19,7 +19,7 @@ class ProdukPolicy
      */
     public function view(User $user, Model $model)
     {
-        return $user->hasAnyRole([VIEW_PRODUKreturn $user->hasAnyRole([
+        return $user->hasAnyRole(['VIEW_PRODUK']);
     }
 
     /**
@@ -30,7 +30,7 @@ class ProdukPolicy
      */
     public function store(User $user)
     {
-        return $user->hasAnyRole([STORE_PRODUKreturn $user->hasAnyRole([
+        return $user->hasAnyRole(['STORE_PRODUK']);
     }
 
     /**
@@ -42,7 +42,7 @@ class ProdukPolicy
      */
     public function update(User $user, Model $model)
     {
-        return $user->hasAnyRole([UPDATE_PRODUKreturn $user->hasAnyRole([
+        return $user->hasAnyRole(['UPDATE_PRODUK']);
     }
 
     /**
@@ -54,7 +54,7 @@ class ProdukPolicy
      */
     public function destroy(User $user, Model $model)
     {
-        return $user->hasAnyRole([DESTROY_PRODUKreturn $user->hasAnyRole([
+        return $user->hasAnyRole(['DESTROY_PRODUK']);
     }
 
     /**

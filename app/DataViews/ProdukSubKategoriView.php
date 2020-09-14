@@ -8,9 +8,10 @@ class ProdukSubKategoriView {
 		return [
 			'Sub Kategori Produk',
 			[
-				'sort_no' => ['label' => 'Sort_No'],
-				'name' => ['label' => 'Name'],
-				'description' => ['label' => 'Description'],
+				'prioritas' => ['label' => 'Urutan ke'],
+				'produk_kategori.nama_kategori' => ['label' => 'Produk_Kategori.nama_Kategori'],
+				'nama_sub_kategori' => ['label' => 'Nama Sub Kategori'],
+				'deskripsi' => ['label' => 'Deskripsi'],
 				'is_active' => ['label' => 'Is Active'],
 			],
 			[

@@ -21,12 +21,13 @@
                         <table class="table table-bordered m-t-3 dtb">
                             <thead>
                                 <tr>
-									<th>Prioritas</th>
-									<th>Produk_Sub_Kategori.nama_Sub_Kategori</th>
-									<th>Nama Sub Kategori</th>
-									<th>Nama Sub Kategori</th>
-									<th>Nama Sub Kategori</th>
-									<th>Updated_At</th>
+									<th>Urutan ke</th>
+									<th>Sub Kategori</th>
+									<th>Link Bukalapak</th>
+									<th>Link Shopee</th>
+									<th>Link Tokopedia</th>
+									<th>Is Active</th>
+									<th>Last Update</th>
 
                                     <th width="1"></th>
                                 </tr>
@@ -39,14 +40,15 @@
 									<td>{{$item->link_bukalapak}}</td>
 									<td>{{$item->link_shopee}}</td>
 									<td>{{$item->link_tokopedia}}</td>
+									<td>{{\App\Enums\YesNo::$STATUS_LIST[$item->is_active]}}</td>
 									<td>{{$item->updated_at}}</td>
 
                                     <td style="white-space: nowrap">
-                                        <form action="{{route('backend.produk.destroy', ['id' => $item->id])}}"
+                                        <form action="{{route('backend.produk.destroy', ['produk' => $item->id])}}"
                                               method="post">
                                             {{csrf_field()}}
                                             <input type="hidden" name="_method" value="DELETE">
-                                            <a href="{{route('backend.produk.edit', ['id' => $item->id])}}"
+                                            <a href="{{route('backend.produk.edit', ['produk' => $item->id])}}"
                                                class="btn btn-warning btn-sm">
                                                 <i class="fa fa-edit"></i>
                                             </a>

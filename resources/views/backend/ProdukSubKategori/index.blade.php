@@ -21,9 +21,10 @@
                         <table class="table table-bordered m-t-3 dtb">
                             <thead>
                                 <tr>
-									<th>Sort_No</th>
-									<th>Name</th>
-									<th>Description</th>
+									<th>Urutan ke</th>
+									<th>Nama Kategori</th>
+									<th>Nama Sub Kategori</th>
+									<th>Deskripsi</th>
 									<th>Is Active</th>
 
                                     <th width="1"></th>
@@ -32,17 +33,18 @@
                             <tbody>
                             @foreach($data as $key => $item)
                                 <tr>
-									<td>{{$item->sort_no}}</td>
-									<td>{{$item->name}}</td>
-									<td>{{$item->description}}</td>
-									<td>{{$item->is_active}}</td>
+									<td>{{$item->prioritas}}</td>
+									<td>{{$item->produk_kategori->nama_kategori}}</td>
+									<td>{{$item->nama_sub_kategori}}</td>
+									<td>{{$item->deskripsi}}</td>
+									<td>{{\App\Enums\YesNo::$STATUS_LIST[$item->is_active]}}</td>
 
                                     <td style="white-space: nowrap">
-                                        <form action="{{route('backend.produk_sub_kategori.destroy', ['id' => $item->id])}}"
+                                        <form action="{{route('backend.produk_sub_kategori.destroy', ['produk_sub_kategori' => $item->id])}}"
                                               method="post">
                                             {{csrf_field()}}
                                             <input type="hidden" name="_method" value="DELETE">
-                                            <a href="{{route('backend.produk_sub_kategori.edit', ['id' => $item->id])}}"
+                                            <a href="{{route('backend.produk_sub_kategori.edit', ['produk_sub_kategori' => $item->id])}}"
                                                class="btn btn-warning btn-sm">
                                                 <i class="fa fa-edit"></i>
                                             </a>

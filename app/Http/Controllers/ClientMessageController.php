@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\ClientMessage;
+use App\Models\ClientMessages;
 use App\Mail\NewMessage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -16,7 +16,7 @@ class ClientMessageController extends Controller
             'message' => 'required',
             'email' => 'required|email',
         ]);
-        $newMessage = new ClientMessage();
+        $newMessage = new ClientMessages();
 
         $newMessage->name = $request->name;
         $newMessage->message = $request->message;
@@ -34,7 +34,7 @@ class ClientMessageController extends Controller
 
     public function viewMessage(Request $request)
     {
-        $newMessage = ClientMessage::orderBy('id', 'DESC')->paginate(50);
+        $newMessage = ClientMessages::orderBy('id', 'DESC')->paginate(50);
         $customPath = '/message';
         $newMessage->withPath($customPath);
         return view('message.index', ['pesan' => $newMessage]);

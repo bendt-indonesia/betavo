@@ -24,10 +24,12 @@ class CreateSubKategoriTable extends Migration
             $table->string('nama_sub_kategori')->unique();
             $table->bigInteger('id_kategori')->unsigned()->nullable();
 
-            $table->text('lampiran')->nullable();
+            $table->text('image_url')->nullable();
             $table->string('slug', 1000)->nullable();
 
             $table->timestamps();
+
+            $table->boolean('is_active')->default(1);
 
             $table->foreign('id_kategori')->references('id')->on('produk_kategori')->onDelete('set null');
         });

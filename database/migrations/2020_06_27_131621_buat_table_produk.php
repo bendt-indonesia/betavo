@@ -23,7 +23,7 @@ class BuatTableProduk extends Migration
             $table->integer("prioritas")->unsigned();
             $table->bigInteger('id_kategori')->unsigned()->nullable();
 
-            $table->string('nama_produk')->unique();
+            $table->string('nama_produk');
             $table->text('deskripsi');
 
             $table->string('link_bukalapak',1000)->nullable();
@@ -37,7 +37,11 @@ class BuatTableProduk extends Migration
             $table->string('image_url_5')->nullable();
             $table->string('youtube_video_url_1')->nullable();
 
+            $table->string('slug')->unique();
+
             $table->timestamps();
+
+            $table->boolean('is_active')->default(1);
 
             $table->foreign('id_kategori')->references('id')->on('produk_sub_kategori')->onDelete('set null');
         });
