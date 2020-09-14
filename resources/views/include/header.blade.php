@@ -20,15 +20,6 @@
                 </svg>
                 <button id="menu-icon-trigger" class="menu-icon-trigger" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"></button>
             </div>
-
-            {{--
-            <button class="navbar-toggler d-lg-none align-items-center navbar-dark" type="button" data-toggle="collapse"
-                    data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                    aria-label="Toggle navigation">
-
-
-            </button>
-            --}}
             <div class="collapse navbar-collapse d-lg-flex" id="navbarNav">
                 <ul class="navbar-nav nav-menu flex-column flex-lg-row align-items-start">
                     @foreach(stores('category') as $item)
@@ -66,7 +57,7 @@
                                         <a href="{{conval('tokopedia')}}" class="d-inline">
                                             <img
                                                 src="{{asset('/img/Betavo_Tokopedia.png')}}"
-                                                class="img-fluid link-nav icon-menu">
+                                                class="img-fluid link-nav icon-menu-header">
                                         </a>
                                     </li>
                                 @endif
@@ -75,7 +66,7 @@
                                     <li class="d-inline mr-3">
                                         <a href="{{conval('shopee')}}"
                                            class="d-inline"><img src="{{asset('/img/Betavo_Shopee.png')}}"
-                                           class="img-fluid link-nav icon-menu">
+                                           class="img-fluid link-nav icon-menu-header">
                                         </a>
                                     </li>
                                 @endif
@@ -84,7 +75,7 @@
                                     <li class="d-inline mr-3">
                                         <a href="{{conval('bukalapak')}}"
                                            class="d-inline"><img src="{{asset('/img/Betavo_Bukalapak.png')}}"
-                                           class="img-fluid link-nav icon-menu">
+                                           class="img-fluid link-nav icon-menu-header">
                                         </a>
                                     </li>
                                 @endif
@@ -93,7 +84,7 @@
                                     <li class="d-inline mr-3">
                                         <a href="{{conval('facebook')}}"
                                            class="d-inline"><img src="{{asset('/img/facebook.png')}}"
-                                           class="img-fluid link-nav icon-menu">
+                                           class="img-fluid link-nav icon-menu-header">
                                         </a>
                                     </li>
                                 @endif
@@ -102,7 +93,7 @@
                                     <li class="d-inline mr-3">
                                         <a href="{{conval('instagram')}}"
                                            class="d-inline"><img src="{{asset('/img/ig.png')}}"
-                                           class="img-fluid link-nav icon-menu">
+                                           class="img-fluid link-nav icon-menu-header">
                                         </a>
                                     </li>
                                 @endif
