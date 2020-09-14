@@ -8,7 +8,7 @@
 @endsection
 
 @section('content')
-    <section data-id="featured-projects" class="section section-page  fp-auto-height-responsive">
+    <section data-id="featured-projects" class="section section-page  fp-auto-height-responsive top-margin">
         <div class="section-margin anim">
             <div class="section-header align-x-center">
                 <div class="width-large d-flex bd-highlight">
