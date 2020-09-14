@@ -7,6 +7,13 @@
                  background-size: cover;"></div>
     <div class="cover-bg pos-abs size-full w-100 h-100 bg-cover-gradientradial opacity-9"></div>
     <div class="section-margin anim">
+        <div class="g-recaptcha"
+             data-sitekey="{{env('RECAPTCHA')}}"
+             data-callback="onSubmit"
+             data-size="invisible"
+            data-badge="bottomleft"
+        >
+        </div>
         <div class="section-content align-x-center">
             <div class="c-wrapper width-medium">
                 <div class="row">

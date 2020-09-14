@@ -81,7 +81,7 @@ class ContactController extends Controller
         return [
             'name' => 'max:50|required',
             'email' => 'email|max:50|required',
-            'message' => 'min:10|max:1000|required',
+            'message' => 'max:1000|required',
             'phone' => 'max:35|required',
         ];
     }

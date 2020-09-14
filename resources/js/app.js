@@ -145,6 +145,7 @@ $(document).on('ready', function () {
     $('#kirimPesan').on('click',function(){
         var validator = $( "#sendMessageToUs" ).validate();
         if( validator.element( "#mes-name" ) && validator.element( "#mes-email" ) && validator.element( "#mes-text" )){
+            $('#page-loader').removeClass('p-hidden');
             grecaptcha.ready(function() {
                 grecaptcha.execute(window.RECAPTCHA, {action: 'submit'}).then(function(token) {
                     console.log(token);
@@ -159,8 +160,14 @@ $(document).on('ready', function () {
                             "message":$('#mes-text').val(),
                         },
                     }).done(function(result, statusText, xhr) {
+                        $('#page-loader').addClass('p-hidden');
+                        $('#mes-name').val('');
+                        $('#mes-email').val('');
+                        $('#mes-phone').val('');
+                        $('#mes-text').val('');
                         $('#sendMessageResponse').html('Terima kasih pesan anda telah kami terima.');
                     }).fail(function(result , statusText, xhr) {
+                        $('#page-loader').addClass('p-hidden');
                         $('#sendMessageResponse').html('Gagal mengirim, silahkan coba beberapa saat lagi.');
                     });
 

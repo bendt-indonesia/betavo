@@ -62,7 +62,7 @@
     window.RECAPTCHA = '{{env('RECAPTCHA')}}';
     window.CSRF = '{{ csrf_token() }}';
 </script>
-<script src="https://www.google.com/recaptcha/api.js?render={{env('RECAPTCHA')}}"></script>
+<script src="https://www.google.com/recaptcha/api.js?render={{env('RECAPTCHA')}}&badge=bottomleft"></script>
 <script src="{{mix('/js/vendor.min.js')}}"></script>
 <script src="{{mix('/js/app.min.js')}}"></script>
 

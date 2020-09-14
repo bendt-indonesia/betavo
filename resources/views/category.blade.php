@@ -10,6 +10,15 @@
 @endsection
 
 @section('content')
+    <!-- BEGIN OF page cover -->
+    <div class="page-cover" style="position:fixed;">
+        <!-- Cover Background -->
+
+        <div class="cover-bg pos-abs size-full bg-img" style="filter:grayscale(100%) blur(2px);" data-image-src="{{ Storage::url($produkSubKategori? $produkSubKategori->produk_kategori->image_url : $produkKategori->image_url) }}"></div>
+        <div class="cover-bg pos-abs size-full bg-cover-gradientradial opacity-9"></div>
+
+    </div>
+
     <section data-id="featured-projects" class="section section-page  fp-auto-height-responsive">
         <div class="section-margin anim">
             <div class="section-header align-x-center">
