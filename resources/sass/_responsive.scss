@@ -1,7 +1,21 @@
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 768px) {
     .modal-content {
         width: 100%;
     }
+    .top-margin {
+        margin-top: 80px;
+    }
+
+    .swiper-product {
+        iframe {
+           max-height: 350px !important;
+           width: 100% !important;
+        }
+        img {
+            border-radius: 15px;
+        }
+    }
+
 }
 
 @media only screen and (max-width: 1023px) {
@@ -11,10 +25,12 @@
 }
 
 
-@media only screen and (min-width: 1280px){
+@media only screen and (min-width: 1024px){
     .ai-menu {
         position: relative;
         display: inline-block;
+         max-width: 70%;
+        overflow-x: scroll;
     }
 
     .ai-menu-content {
@@ -29,6 +45,24 @@
 
     .ai-menu:hover .ai-menu-content {
         display: block;
+    }
+    .navbar-group {
+        max-width: 70%;
+        overflow-x: scroll;
+    }
+}
+
+
+@media only screen and (min-width: 1250px) {
+    .navbar-group {
+        max-width: 75%;
+    }
+}
+
+
+@media only screen and (min-width: 1600px) {
+    .navbar-group {
+        max-width: 100%;
     }
 }
 

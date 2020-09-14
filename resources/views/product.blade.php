@@ -3,6 +3,7 @@
     "meta_desc" => $produk->meta_description,
     "meta_keys" => $produk->meta_keywords,
     "footer_bg" => false,
+    "main" => true,
 ])
 
 <?php
@@ -39,13 +40,13 @@ $body = $title.', '.$link;
 @endsection
 
 @section('content')
-    <section data-id="main-features" class="section section-page">
+    <section data-id="main-features" class="section section-page top-margin">
         <div class="section-cover"></div>
         <div class="section-margin-off" >
             <div class="section-content mt-5 mb-5 align-x-center">
                 <div class="container">
                     <div class="row">
-                        <div class="p-0 col-12 col-md-6">
+                        <div class="p-0 col-12 col-lg-6">
                             <div class="swiper-container swiper-product">
 
                                 <div class="swiper-wrapper d-flex align-items-center">
@@ -60,9 +61,7 @@ $body = $title.', '.$link;
                                     @foreach([1,2,3,4,5] as $i)
                                         @if($produk->{'image_url_'.$i} != '')
                                             <div class="swiper-slide">
-                                                <img
-                                                    src="{{Storage::url($produk->{'image_url_'.$i} )}}"
-                                                     class="img-fluid zoomableImg" />
+                                                <img src="{{Storage::url($produk->{'image_url_'.$i} )}}" class="img-fluid zoomableImg" />
                                             </div>
                                         @endif
                                     @endforeach
@@ -74,7 +73,7 @@ $body = $title.', '.$link;
                                 <div class="swiper-pagination" ></div>
                             </div>
                         </div>
-                        <div class="p-0 p-md-4 col-12 col-md-6">
+                        <div class="p-0 p-md-4 col-12 col-lg-6">
                             <hr class="m-0 mt-4 mb-4"/>
                             @if(isset($produk->produk_sub_kategori->produk_kategori))
                                 <a href="{{route('category',['cat' => $produk->produk_sub_kategori->produk_kategori->slug])}}" class="text-white">
@@ -111,11 +110,11 @@ $body = $title.', '.$link;
                             </div>
                             <div class="d-block mt-4 mb-4">
                                 <p>Bagikan Produk:</p>
-                                <a class="mr-4 text-white pointer" href="https://www.facebook.com/sharer/sharer.php?u={{Request::url()}}"><img src="{{asset('/static/Betavo_Icons_Facebook.svg')}}" class="icon-mp"></a>
-                                <a class="mr-4 text-white pointer" href="https://twitter.com/intent/tweet?text={{$body}}"><img src="{{asset('/static/Betavo_Icons_Twitter.svg')}}" class="icon-mp"></a>
-                                <a class="mr-4 text-white pointer" href="https://wa.me/?text={{$body}}"><img src="{{asset('/static/Betavo_Icons_Whatsapp.svg')}}" class="icon-mp"></a>
-                                <a class="mr-4 text-white pointer" href="https://t.me/share/url?url={{$produk->nama_produk}}&text={{$title}}"><img src="{{asset('/static/Betavo_Icons_Telegram.svg')}}" class="icon-mp"></a>
-                                <a class="mr-4 text-white pointer" href="mailto:betavo.audio@gmail.com&subject={{$title}}&body={{$body}}"><img src="{{asset('/static/Betavo_Icons_Email.svg')}}" class="icon-mp"></a>
+                                <a class="mr-3 text-white pointer" href="https://www.facebook.com/sharer/sharer.php?u={{Request::url()}}"><img src="{{asset('/static/Betavo_Icons_Facebook.svg')}}" class="icon-mp"></a>
+                                <a class="mr-3 text-white pointer" href="https://twitter.com/intent/tweet?text={{$body}}"><img src="{{asset('/static/Betavo_Icons_Twitter.svg')}}" class="icon-mp"></a>
+                                <a class="mr-3 text-white pointer" href="https://wa.me/?text={{$body}}"><img src="{{asset('/static/Betavo_Icons_Whatsapp.svg')}}" class="icon-mp"></a>
+                                <a class="mr-3 text-white pointer" href="https://t.me/share/url?url={{$produk->nama_produk}}&text={{$title}}"><img src="{{asset('/static/Betavo_Icons_Telegram.svg')}}" class="icon-mp"></a>
+                                <a class="mr-3 text-white pointer" href="mailto:betavo.audio@gmail.com&subject={{$title}}&body={{$body}}"><img src="{{asset('/static/Betavo_Icons_Email.svg')}}" class="icon-mp"></a>
                             </div>
                             <div class="d-block mt-2 mb-4">
                                 <div class="sharethis-inline-share-buttons"></div>

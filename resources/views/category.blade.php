@@ -20,7 +20,7 @@
     </div>
 
     <section data-id="featured-projects" class="section section-page  fp-auto-height-responsive">
-        <div class="section-margin anim">
+        <div class="section-margin top-margin anim">
             <div class="section-header align-x-center">
                 <div class="width-large d-flex bd-highlight">
                     <div class=" d-flex justify-content-end align-items-center">

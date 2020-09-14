@@ -1,5 +1,5 @@
 <!-- Begin of contact -->
-<section data-id="contact" class="section section-page fp-auto-height-responsive section-contact">
+<section data-id="contact" class="section section-page fp-auto-height-responsive section-contact {{Request::segment(1)=='contact'?'top-margin':''}}">
     <div class="cover-bg pos-abs size-full bg-img w-100 h-100"
          data-image-src="{{el_url($contact,'contact-background')}}"
          style="background-repeat: no-repeat;
