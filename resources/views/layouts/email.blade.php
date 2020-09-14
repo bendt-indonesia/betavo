@@ -152,9 +152,9 @@
                                             <th class="thead" width="200" align="left" style="vertical-align:top; padding:0;">
                                                 <table class="center" align="right" cellpadding="0" cellspacing="0">
                                                     <tr>
-                                                        @if(CMSConfig::get('twitter') != "")
+                                                        @if(CMSConfig::get('instagram') != "")
                                                             <td class="btn" valign="top" style="line-height:0; padding:3px 0 0;">
-                                                                <a target="_blank" style="text-decoration:none;" href="{!! CMSConfig::get('twitter') !!}"><img src="{{url('images/icon/ico-twitter.png')}}" border="0" style="font:12px/15px Arial, Helvetica, sans-serif; color:#797c82;" align="left" vspace="0" hspace="0" width="13" height="13" alt="twitter" /></a>
+                                                                <a target="_blank" style="text-decoration:none;" href="{!! CMSConfig::get('instagram') !!}"><img src="{{url('images/icon/ico-instagram.png')}}" border="0" style="font:12px/15px Arial, Helvetica, sans-serif; color:#797c82;" align="left" vspace="0" hspace="0" width="13" height="13" alt="instagram" /></a>
                                                             </td>
                                                             <td width="20"></td>
                                                         @endif
