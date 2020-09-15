@@ -157,40 +157,34 @@
     </nav>
     <!-- End of navbar-top -->
 
-    @if(Request::segment(1) == '')
+    @if(Request::segment(0) == '' && isset($page))
         <!-- Begin of navbar-sidebar -->
-        <nav class="navbar navbar-sidebar ">
+        <nav class="navbar navbar-sidebar">
             <div class="navbar-group">
                 <div class="navbar-collapse">
                     <ul id="sidebar-menu" class="navbar-nav nav-menu">
                         <li class="nav-item active" data-menuanchor="home">
                             <a href="#home">
                                 <span class="icon ion-home "></span>
-                                <span class="text ">Intro</span>
+                                <span class="text ">{{el($page,'left-menu-intro-label')}}</span>
                             </a>
                         </li>
                         <li class="nav-item" data-menuanchor="about">
                             <a href="#about">
                                 <span class="icon ion-android-bulb"></span>
-                                <span class="text ">Tentang</span>
+                                <span class="text ">{{el($page,'left-menu-about-label')}}</span>
                             </a>
                         </li>
                         <li class="nav-item" data-menuanchor="gallery">
                             <a href="#gallery">
                                 <span class="icon ion-grid"></span>
-                                <span class="text ">Produk</span>
+                                <span class="text ">{{el($page,'left-menu-product-label')}}</span>
                             </a>
                         </li>
-                        <!-- <li class="nav-item" data-menuanchor="subscribe">
-                          <a href="#subscribe">
-                            <span class="icon ion-android-mail"></span>
-                            <span class="text">Subscribe</span>
-                          </a>
-                        </li> -->
                         <li class="nav-item" data-menuanchor="contact">
                             <a href="#contact">
                                 <span class="icon ion-android-call"></span>
-                                <span class="text ">Kontak</span>
+                                <span class="text ">{{el($page,'left-menu-contact-label')}}</span>
                             </a>
                         </li>
                     </ul>
@@ -210,6 +204,5 @@
         </div>
     </nav>
     <!-- End of navfull-menu -->
-
 </header>
 <!-- END OF Header navigation of the page -->

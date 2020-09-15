@@ -22,6 +22,7 @@ class CreateSubKategoriTable extends Migration
             $table->integer('prioritas')->unsigned();
 
             $table->string('nama_sub_kategori')->unique();
+            $table->string('deskripsi',1000)->nullable();
             $table->bigInteger('id_kategori')->unsigned()->nullable();
 
             $table->text('image_url')->nullable();

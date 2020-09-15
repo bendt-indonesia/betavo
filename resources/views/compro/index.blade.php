@@ -124,21 +124,21 @@
               <div class="w-100 d-block mx-0 px-0 d-lg-none mt-5">
                 <ul class="icons mx-0 px-0">
                   @if(isset($informasi))
-                  @if(isset($informasi->link_tokopedia))
-                    <li class="d-inline mr-3"><a href="{{$informasi->link_tokopedia}}"  class="d-inline"><img src="/img/Betavo_Tokopedia.png" style="width:2rem;height:2rem" alt="tokopedia - {{$informasi->nama_brand}}" class="img-fluid link-nav"> </a></li>
-                  @endif
-                  @if(isset($informasi->link_shopee))
-                    <li class="d-inline mr-3"><a href="{{$informasi->link_shopee}}" class="d-inline"><img src="/img/Betavo_Shopee.png" style="width:2rem;height:2rem" alt="shopee - {{$informasi->nama_brand}}" class="img-fluid link-nav"> </a></li>
-                  @endif
-                  @if(isset($informasi->link_bukalapak))
-                    <li class="d-inline mr-3"><a href="{{$informasi->link_bukalapak}}" class="d-inline"><img src="/img/Betavo_Bukalapak.png" style="width:2rem;height:2rem" alt="bukalapak - {{$informasi->nama_brand}}" class="img-fluid link-nav"> </a></li>
-                  @endif
-                  @if(isset($informasi->link_facebook))
-                  <li class="d-inline mr-3"><a href="{{$informasi->link_facebook}}" class="d-inline"> <img src="/img/facebook.png" style="width:2rem;height:2rem" alt="faecbook - {{$informasi->nama_brand}}" class="img-fluid link-nav icon05"></i></a></li>
-                  @endif
-                  @if(isset($informasi->link_instagram))
-                  <li class="d-inline mr-3"><a href="{{$informasi->link_instagram}}" class="d-inline"><img src="/img/ig.png" style="width:2rem;height:2rem" alt="instagram - {{$informasi->nama_brand}}" class="img-fluid  link-nav icon05"></i></a></li>
-                  @endif
+                      @if(isset($informasi->link_tokopedia))
+                        <li class="d-inline mr-3"><a href="{{$informasi->link_tokopedia}}"  class="d-inline"><img src="/img/Betavo_Tokopedia.png" style="width:2rem;height:2rem" alt="tokopedia - {{$informasi->nama_brand}}" class="img-fluid link-nav"> </a></li>
+                      @endif
+                      @if(isset($informasi->link_shopee))
+                        <li class="d-inline mr-3"><a href="{{$informasi->link_shopee}}" class="d-inline"><img src="/img/Betavo_Shopee.png" style="width:2rem;height:2rem" alt="shopee - {{$informasi->nama_brand}}" class="img-fluid link-nav"> </a></li>
+                      @endif
+                      @if(isset($informasi->link_bukalapak))
+                        <li class="d-inline mr-3"><a href="{{$informasi->link_bukalapak}}" class="d-inline"><img src="/img/Betavo_Bukalapak.png" style="width:2rem;height:2rem" alt="bukalapak - {{$informasi->nama_brand}}" class="img-fluid link-nav"> </a></li>
+                      @endif
+                      @if(isset($informasi->link_facebook))
+                      <li class="d-inline mr-3"><a href="{{$informasi->link_facebook}}" class="d-inline"> <img src="/img/facebook.png" style="width:2rem;height:2rem" alt="faecbook - {{$informasi->nama_brand}}" class="img-fluid link-nav icon05"></i></a></li>
+                      @endif
+                      @if(isset($informasi->link_instagram))
+                      <li class="d-inline mr-3"><a href="{{$informasi->link_instagram}}" class="d-inline"><img src="/img/ig.png" style="width:2rem;height:2rem" alt="instagram - {{$informasi->nama_brand}}" class="img-fluid  link-nav icon05"></i></a></li>
+                      @endif
                   @endif
                 </ul>
             </div>

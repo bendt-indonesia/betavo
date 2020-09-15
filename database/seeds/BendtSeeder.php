@@ -164,7 +164,7 @@ class BendtSeeder extends Seeder
             ),
             PageSeeder::element('id',
                 'intro-description',
-                '<p>Betavo merupakan salah satu leading brand untuk market audio di Indonesia. Berdiri pada tahun 2007, Betavo menjadi salah satu brand yang dipercaya oleh pasar Indonesia. Pada awal berdirinya, Betavo hanya memproduksi audio karaoke untuk pasar low-end, tapi seiring berkembangnya teknologi, dengan melihat pertumbuhan market yang ada saat ini, Betavo mengembangkan divisi riset dan marketing internal-nya, untuk fokus ke arah yang lebih tinggi lagi, sehingga menciptakan produk terbaik dan berkualitas tinggi.</p>',
+                '<p>Betavo adalah leading brand untuk Market Audio di Indonesia. Betavo senantiasa berinovasi dan terus mengembangkan produk terbaik dan berkualitas tinggi.</p>',
                 [
                     'type' => 'textarea',
                     'rules' => '',
@@ -228,7 +228,7 @@ class BendtSeeder extends Seeder
             ),
             PageSeeder::element('id',
                 'about-description',
-                'Betavo merupakan salah satu leading brand untuk market audio di Indonesia. Berdiri pada tahun 2007, Betavo menjadi salah satu brand yang dipercaya oleh pasar Indonesia. Pada awal berdirinya, Betavo hanya memproduksi audio karaoke untuk pasar low-end, tapi seiring berkembangnya teknologi, dengan melihat pertumbuhan market yang ada saat ini, Betavo mengembangkan divisi riset dan marketing internal-nya, untuk fokus ke arah yang lebih tinggi lagi, sehingga menciptakan produk terbaik dan berkualitas tinggi.',
+                'Betavo Audio menyediakan berbagai keperluan pendukung sound sistem, seperti: Amplifier, Microphone, Speaker, Mixer, Accesories, dan Equaliser. Dengan pengalaman lebih dari 10 tahun, Betavo Audio kini menjadi salah satu brand yang dipercaya oleh pasar Indonesia.',
                 [
                     'type' => 'textarea',
                     'rules' => '',

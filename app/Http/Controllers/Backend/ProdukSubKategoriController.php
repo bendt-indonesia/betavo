@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Store;
 
 use App\Models\ProdukSubKategori as Model;
 use App\Data\ProdukSubKategori\RequestStoreProdukSubKategori;
@@ -13,7 +14,7 @@ use App\Data\ProdukSubKategori\RequestUpdateProdukSubKategori;
 
 class ProdukSubKategoriController extends Controller
 {
-    
+
 
     const PREFIX = 'backend.ProdukSubKategori';
 
@@ -64,7 +65,7 @@ class ProdukSubKategoriController extends Controller
 
             $model = new Model($request->validated());
             $model->process($request->allFiles(),'create');
-
+            Store::forget('category');
             $request->session()->flash('success', 'New record (ProdukSubKategori) has been added!');
 
             return redirect()->route(self::PREFIX);
@@ -135,7 +136,7 @@ class ProdukSubKategoriController extends Controller
             $model = Model::find($id);
             $model->fill($request->validated());
             $model->process($request->allFiles());
-
+            Store::forget('category');
             $request->session()->flash('success', 'Record Updated!');
 
             return redirect()->route(self::PREFIX);
@@ -159,7 +160,7 @@ class ProdukSubKategoriController extends Controller
 
             $model = Model::findOrFail($id);
             $model->remove();
-
+            Store::forget('category');
             $request->session()->flash('success', 'Record removed!');
 
             return redirect()->route(self::PREFIX);

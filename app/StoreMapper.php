@@ -14,7 +14,7 @@ class StoreMapper
             case 'users':
                 return function() { return User::all(); };
             case 'category':
-                return function() { return ProdukKategori::with('produk_sub_kategori')->where('is_active',1)->get(); };
+                return function() { return ProdukKategori::with(['produk_sub_kategori'])->where('is_active',1)->orderBy('prioritas')->get(); };
             default:
                 return null;
         }

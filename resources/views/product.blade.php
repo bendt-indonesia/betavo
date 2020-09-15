@@ -138,22 +138,22 @@ $body = $title.', '.$link;
                 <div class="container">
                     <h2>Produk serupa dari Betavo Audio</h2>
                     <div class="row mb-5">
-                        @foreach($produkSerupa as $produk)
+                        @foreach($produkSerupa as $row)
                             <div class="mt-2 mt-md-4 col-12 col-md-4 col-lg-3 mb-3">
-                                <a href="{{route('product',['slug'=>$produk->slug])}}" class="text-white link-plain">
+                                <a href="{{route('product',['slug'=>$row->slug])}}" class="text-white link-plain">
                                     <div class="item-grid-a">
                                         <div class="item-img mt-4 mb-4 rounded-border">
-                                            <img class="img imgProduk" src="{{\Storage::url($produk->image_url_1)}}">
+                                            <img class="img imgProduk" src="{{\Storage::url($row->image_url_1)}}">
                                         </div>
                                         <div class="item-header">
                                             <p class="min-height-product"><b
-                                                    class=" force-title">{{$produk->nama_produk}}</b></p>
+                                                    class=" force-title">{{$row->nama_produk}}</b></p>
                                         </div>
                                         <div class="item-content">
                                             <p style="font-size: 12pt; min-height:80px">
-                                                {{$produk->deskripsi}}
+                                                {{$row->deskripsi}}
                                             </p>
-                                            <a class="btn btn-line-a mt4" href="{{route('product',['slug'=>$produk->slug])}}">
+                                            <a class="btn btn-line-a mt4" href="{{route('product',['slug'=>$row->slug])}}">
                                                 <span class="text">Lihat detail</span>
                                                 <span class="icon icon-menu icon-arrow-a icon-anim">
                                                         <span class="arrow-right"></span>

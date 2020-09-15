@@ -23,6 +23,7 @@
                                 <tr>
 									<th>Urutan ke</th>
 									<th>Sub Kategori</th>
+									<th>Nama Produk</th>
 									<th>Link Bukalapak</th>
 									<th>Link Shopee</th>
 									<th>Link Tokopedia</th>
@@ -37,6 +38,7 @@
                                 <tr>
 									<td>{{$item->prioritas}}</td>
 									<td>{{$item->produk_sub_kategori->nama_sub_kategori}}</td>
+									<td>{{$item->nama_produk}}</td>
 									<td>{{$item->link_bukalapak}}</td>
 									<td>{{$item->link_shopee}}</td>
 									<td>{{$item->link_tokopedia}}</td>

@@ -26,6 +26,7 @@ class ComproController extends Controller
     {
         $produkKategori = ProdukKategori::with('produk_sub_kategori.produk')
             ->where('slug', $category_slug)
+            ->where('is_active',1)
             ->orderBy('prioritas')
             ->first();
 
@@ -43,7 +44,7 @@ class ComproController extends Controller
             }
         }
 
-        $listProduk = Produk::whereIn('id_kategori', $ids)->paginate(12);
+        $listProduk = Produk::whereIn('id_kategori', $ids)->where('is_active',1)->orderBy('prioritas')->paginate(12);
 
         return view('category', [
             "produkKategori" => $produkKategori,
@@ -69,30 +70,30 @@ class ComproController extends Controller
         ]);
     }
 
-    public function showProductDetailOld(Request $request)
-    {
-        $namaProdukTerpilih = $request->query('nama');
-        if (!isset($namaProdukTerpilih)) {
-            return redirect('/');
-        }
-        $produkKategori = ProdukKategori::get();
-        $produkSubKategori = ProdukSubKategori::get();
-        $produkTerpilih = Produk::select('produk.*', 'produk_sub_kategori.nama_sub_kategori', 'produk_kategori.nama_kategori')
-            ->leftJoin('produk_sub_kategori', 'produk.id_kategori', 'produk_sub_kategori.id')
-            ->leftJoin('produk_kategori', 'produk_sub_kategori.id_kategori', 'produk_kategori.id')
-            ->whereRaw('produk.id = 12')
-            ->first();
-
-        //produk serupa di random
-        //$produkSerupa = Produk::where('id_kategori',$produkTerpilih->id_kategori)->where('id','!=',$produkTerpilih->id)->take(4)->get();
-        $produkSerupa = Produk::where('id_kategori', $produkTerpilih->id_kategori)->where('id', '!=', $produkTerpilih->id)->inRandomOrder()->limit(4)->get();
-        return view('compro.detail', [
-            "produkSerupa" => $produkSerupa,
-            "produkTerpilih" => $produkTerpilih,
-            "produkSubKategori" => $produkSubKategori,
-            "produkKategori" => $produkKategori,
-            'informasi' => []]);
-    }
+//    public function showProductDetailOld(Request $request)
+//    {
+//        $namaProdukTerpilih = $request->query('nama');
+//        if (!isset($namaProdukTerpilih)) {
+//            return redirect('/');
+//        }
+//        $produkKategori = ProdukKategori::get();
+//        $produkSubKategori = ProdukSubKategori::get();
+//        $produkTerpilih = Produk::select('produk.*', 'produk_sub_kategori.nama_sub_kategori', 'produk_kategori.nama_kategori')
+//            ->leftJoin('produk_sub_kategori', 'produk.id_kategori', 'produk_sub_kategori.id')
+//            ->leftJoin('produk_kategori', 'produk_sub_kategori.id_kategori', 'produk_kategori.id')
+//            ->whereRaw('produk.id = 12')
+//            ->first();
+//
+//        //produk serupa di random
+//        //$produkSerupa = Produk::where('id_kategori',$produkTerpilih->id_kategori)->where('id','!=',$produkTerpilih->id)->take(4)->get();
+//        $produkSerupa = Produk::where('id_kategori', $produkTerpilih->id_kategori)->where('id', '!=', $produkTerpilih->id)->inRandomOrder()->limit(4)->get();
+//        return view('compro.detail', [
+//            "produkSerupa" => $produkSerupa,
+//            "produkTerpilih" => $produkTerpilih,
+//            "produkSubKategori" => $produkSubKategori,
+//            "produkKategori" => $produkKategori,
+//            'informasi' => []]);
+//    }
 
     public function search(Request $request)
     {

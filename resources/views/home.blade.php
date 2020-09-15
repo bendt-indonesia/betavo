@@ -20,6 +20,8 @@
             <div class="cover-bg pos-abs size-full bg-cover-gradientradial opacity-9">
             </div>
         </div>
+        <div class="section-title title-right">
+        </div>
         <div class="section-content align-x-center align-y-center anim">
             <div class="width-medium">
                 <div class="row no-gutters">
@@ -31,10 +33,10 @@
                             <div class="text mb-5 anim-4">
                                 {!! el($page,'intro-description') !!}
                             </div>
-                            @if(el($page,'into-button-text'))
+                            @if(el($page,'intro-button-text'))
                             <div class="btns-group anim-5">
-                                <a class="btn btn-line-a" href="{{el($page,'into-button-url')}}">
-                                    <span class="text ">{{el($page,'into-button-text')}}</span>
+                                <a class="btn btn-line-a" href="{{el($page,'intro-button-url')}}">
+                                    <span class="text ">{{el($page,'intro-button-text')}}</span>
                                     <span class="icon icon-menu icon-arrow-a icon-anim">
                                       <span class="arrow-right"></span>
                                     </span>
@@ -131,7 +133,7 @@
                         <div class="swiper-slide slide-item">
                             <div class="slide-b slide-anim fullscreen-slide content-top">
                                 <div class="slide-bg fade-1" style="filter:grayscale(100%) brightness(60%);">
-                                    <img class="img-block" alt="$img[0]->alt"
+                                    <img class="img-block"
                                          src="{{Storage::url($kategori->image_url)}}">
                                 </div>
 
@@ -201,8 +203,6 @@
         </div>
 
     </section>
-    <!-- End of gallery -->
-    @include('component.contact')
 @endsection
 
 @section('script')
