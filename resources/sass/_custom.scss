@@ -151,3 +151,25 @@
         pointer-events:none;
     }
 }
+
+a:hover {
+    text-decoration: none;
+}
+
+.page-link:hover {
+    color: #fff !important;
+}
+
+.bg-light-gray{
+    background: #ddd;
+}
+main {
+    &.white-page{
+        background: #fff;
+        color:#141414 !important;
+
+        .text-gray {
+            color:#736d6d !important;
+        }
+    }
+}

@@ -13,7 +13,7 @@
                 <p style="font-size: 12pt; min-height:80px">
                     {{$proList->deskripsi}}
                 </p>
-                <a class="btn btn-line-a mt4" href="{{route('product',['slug'=>$proList->slug])}}">
+                <a class="btn btn-line-a mt4 {{isset($btnLine) ? $btnLine : ''}}" href="{{route('product',['slug'=>$proList->slug])}}">
                     <span class="text">Lihat detail</span>
                     <span class="icon icon-menu icon-arrow-a icon-anim">
                         <span class="arrow-right"></span>

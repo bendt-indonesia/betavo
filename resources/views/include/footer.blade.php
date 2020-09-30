@@ -1,3 +1,4 @@
+@if(!isset($footer_hide))
 <div class="section-footer section-footer-a {{isset($footer_bg)?'footer-bg':''}} anim">
     <div class="home-footer width-medium">
         <div class="h-left anim-2">
@@ -22,3 +23,4 @@
         </div>
     </div>
 </div>
+@endif

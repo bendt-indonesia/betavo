@@ -37,9 +37,10 @@
 </div>
 
 @include('include.header')
-<main class="page-main {{isset($main)?'':'fullpage-scroll anim-slide-scroll'}} " id="mainpage">
+<main class="page-main {{isset($main)?'':'fullpage-scroll anim-slide-scroll'}} {{isset($main_class) ? $main_class : ''}}" id="mainpage">
 @yield('content')
 </main>
+@yield('content_below')
 @include('include.footer')
 
 @yield('bottom')

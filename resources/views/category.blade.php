@@ -3,6 +3,7 @@
     "meta_desc" => $produkSubKategori?$produkSubKategori->meta_description:$produkKategori->meta_description,
     "meta_keys" => $produkSubKategori?$produkSubKategori->meta_keywords:$produkKategori->meta_keywords,
     "footer_bg" => true,
+    "main_class" => 'white-page'
 ])
 
 @section('head')
@@ -13,8 +14,6 @@
     <!-- BEGIN OF page cover -->
     <div class="page-cover" style="position:fixed;">
         <!-- Cover Background -->
-
-        <div class="cover-bg pos-abs size-full bg-img" style="filter:grayscale(100%) blur(2px);" data-image-src="{{ Storage::url($produkSubKategori? $produkSubKategori->produk_kategori->image_url : $produkKategori->image_url) }}"></div>
         <div class="cover-bg pos-abs size-full bg-cover-gradientradial opacity-9"></div>
 
     </div>
@@ -24,7 +23,7 @@
             <div class="section-header align-x-center">
                 <div class="width-large d-flex bd-highlight">
                     <div class=" d-flex justify-content-end align-items-center">
-                        <h1 class="h-title font-title anim-1 d-inline pb-0">
+                        <h1 class="h-title font-title anim-1 d-inline pb-0 text-white">
                             @if($produkSubKategori)
                                 {{$produkSubKategori->nama_sub_kategori}}
                             @else
@@ -34,7 +33,7 @@
                     </div>
                     <div class="navbar-toggler d-none d-lg-inline d-lg-flex justify-content-end align-items-center"
                          style="flex-grow:1">
-                        <a id="menu-icon1" class="menu-toggler btn- btn btn-line-b py-3 py-md-0" href="#">
+                        <a id="menu-icon1" class="menu-toggler btn- btn btn-line-b py-3 py-md-0 text-white" href="#">
                             <span class="bd-left text multiline t-upper fs-normal d-none d-md-flex">
                               <i class="icon fa fa-search" style="font-size: 20pt;"></i>
                             </span>
@@ -60,7 +59,7 @@
 
             <div class="section-header align-x-center">
                 <div class="width-large d-flex bd-highlight">
-                    <p style="max-width: none;margin-top: 20px">{{$produkKategori->deskripsi}}</p>
+                    <p style="max-width: none;margin-top: 20px" class=" text-white">{{$produkKategori->deskripsi}}</p>
                 </div>
             </div>
 
@@ -70,7 +69,7 @@
 
                     @if(count($listProduk)>0)
                         @foreach($listProduk as $produk)
-                            @include('component.productList',['proList'=>$produk])
+                            @include('component.productList',['proList'=>$produk ,'btnLine' => 'text-white'])
                         @endforeach
                         @else
                             <div class="mt-4 col-12 col-md-6">

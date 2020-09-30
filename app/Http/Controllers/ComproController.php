@@ -50,6 +50,7 @@ class ComproController extends Controller
             "produkKategori" => $produkKategori,
             "produkSubKategori" => $produkSubKategori,
             'listProduk' => $listProduk,
+            'contact' => \CMSPage::get('contact'),
         ]);
     }
 
@@ -66,7 +67,8 @@ class ComproController extends Controller
 
         return view('product', [
             'produk' => $produk,
-            'produkSerupa' => $produkSerupa
+            'produkSerupa' => $produkSerupa,
+            'contact' => \CMSPage::get('contact'),
         ]);
     }
 

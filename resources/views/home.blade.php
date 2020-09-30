@@ -203,6 +203,7 @@
         </div>
 
     </section>
+    @include('component.contact')
 @endsection
 
 @section('script')
