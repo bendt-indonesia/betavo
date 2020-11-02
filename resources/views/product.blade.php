@@ -100,22 +100,22 @@ $body = $title.', '.$link;
                             <div class="d-block mt-4 mb-4">
                                 <p>Beli Produk:</p>
                                 @if(isset($produk->link_tokopedia))
-                                    <a class="mr-4 text-gray pointer" href="{{$produk->link_tokopedia}}"><img class="icon-mp" src="{{asset('/static/Betavo_Icons_Tokopedia.png')}}" alt="Beli {{$produk->nama_produk}} di Tokopedia"></a>
+                                    <a class="mr-4 text-gray pointer" href="{{$produk->link_tokopedia}}"><img class="icon-mp" src="{{asset('/static/Betavo_Icons_Tokopedia2.png')}}" alt="Beli {{$produk->nama_produk}} di Tokopedia"></a>
                                 @endif
                                 @if(isset($produk->link_shopee))
-                                    <a class="mr-4 text-gray pointer" href="{{$produk->link_shopee}}"><img class="icon-mp" src="{{asset('/static/Betavo_Icons_Shopee.png')}}" alt="Beli {{$produk->nama_produk}} di Shopee"></a>
+                                    <a class="mr-4 text-gray pointer" href="{{$produk->link_shopee}}"><img class="icon-mp" src="{{asset('/static/Betavo_Icons_Shopee2.png')}}" alt="Beli {{$produk->nama_produk}} di Shopee"></a>
                                 @endif
                                 @if(isset($produk->link_bukalapak))
-                                    <a class="mr-4 text-gray pointer" href="{{$produk->link_bukalapak}}"><img class="icon-mp" src="{{asset('/static/Betavo_Icons_Bukalapak.png')}}" alt="Beli {{$produk->nama_produk}} di Bukalapak"></a>
+                                    <a class="mr-4 text-gray pointer" href="{{$produk->link_bukalapak}}"><img class="icon-mp" src="{{asset('/static/Betavo_Icons_Bukalapak2.png')}}" alt="Beli {{$produk->nama_produk}} di Bukalapak"></a>
                                 @endif
                             </div>
                             <div class="d-block mt-4 mb-4">
                                 <p>Bagikan Produk:</p>
-                                <a class="mr-3 text-gray pointer" href="https://www.facebook.com/sharer/sharer.php?u={{Request::url()}}"><img src="{{asset('/static/Betavo_Icons_Facebook.svg')}}" class="icon-mp"></a>
-                                <a class="mr-3 text-gray pointer" href="https://twitter.com/intent/tweet?text={{$body}}"><img src="{{asset('/static/Betavo_Icons_Twitter.svg')}}" class="icon-mp"></a>
-                                <a class="mr-3 text-gray pointer" href="https://wa.me/?text={{$body}}"><img src="{{asset('/static/Betavo_Icons_Whatsapp.svg')}}" class="icon-mp"></a>
-                                <a class="mr-3 text-gray pointer" href="https://t.me/share/url?url={{$produk->nama_produk}}&text={{$title}}"><img src="{{asset('/static/Betavo_Icons_Telegram.svg')}}" class="icon-mp"></a>
-                                <a class="mr-3 text-gray pointer" href="mailto:betavo.audio@gmail.com&subject={{$title}}&body={{$body}}"><img src="{{asset('/static/Betavo_Icons_Email.svg')}}" class="icon-mp"></a>
+                                <a class="mr-3 text-gray pointer" href="https://www.facebook.com/sharer/sharer.php?u={{Request::url()}}"><img src="{{asset('/static/Betavo_Icons_Facebook2.svg')}}" class="icon-mp"></a>
+                                <a class="mr-3 text-gray pointer" href="https://twitter.com/intent/tweet?text={{$body}}"><img src="{{asset('/static/Betavo_Icons_Twitter2.svg')}}" class="icon-mp"></a>
+                                <a class="mr-3 text-gray pointer" href="https://wa.me/?text={{$body}}"><img src="{{asset('/static/Betavo_Icons_Whatsapp2.svg')}}" class="icon-mp"></a>
+                                <a class="mr-3 text-gray pointer" href="https://t.me/share/url?url={{$produk->nama_produk}}&text={{$title}}"><img src="{{asset('/static/Betavo_Icons_Telegram2.svg')}}" class="icon-mp"></a>
+                                <a class="mr-3 text-gray pointer" href="mailto:betavo.audio@gmail.com&subject={{$title}}&body={{$body}}"><img src="{{asset('/static/Betavo_Icons_Email2.svg')}}" class="icon-mp"></a>
                             </div>
                             <div class="d-block mt-2 mb-4">
                                 <div class="sharethis-inline-share-buttons"></div>

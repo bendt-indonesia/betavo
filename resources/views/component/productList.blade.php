@@ -11,7 +11,7 @@
             </div>
             <div class="item-content">
                 <p style="font-size: 12pt; min-height:80px">
-                    {{$proList->deskripsi}}
+                    {!! strip_tags($proList->deskripsi) !!}
                 </p>
                 <a class="btn btn-line-a mt4 {{isset($btnLine) ? $btnLine : ''}}" href="{{route('product',['slug'=>$proList->slug])}}">
                     <span class="text">Lihat detail</span>
