@@ -59,7 +59,7 @@
 
             <div class="section-header align-x-center">
                 <div class="width-large d-flex bd-highlight">
-                    <p style="max-width: none;margin-top: 20px" class=" text-white">{{$produkKategori->deskripsi}}</p>
+                    <p style="max-width: none;margin-top: 20px" class=" text-white">{!! $produkKategori->deskripsi !!}</p>
                 </div>
             </div>
 
