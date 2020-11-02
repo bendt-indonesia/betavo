@@ -10,8 +10,14 @@
                 </p>
             </div>
             <div class="item-content">
+                <?php
+                $desc = strip_tags($proList->deskripsi);
+                if(strlen($desc) > 200) {
+                    $desc = substr($desc,0,199);
+                }
+                ?>
                 <p style="font-size: 12pt; min-height:80px">
-                    {!! strip_tags($proList->deskripsi) !!}
+                    {!! $desc !!}
                 </p>
                 <a class="btn btn-line-a mt4 {{isset($btnLine) ? $btnLine : ''}}" href="{{route('product',['slug'=>$proList->slug])}}">
                     <span class="text">Lihat detail</span>
