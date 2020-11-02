@@ -25,9 +25,9 @@
                     <div class=" d-flex justify-content-end align-items-center">
                         <h1 class="h-title font-title anim-1 d-inline pb-0 text-white">
                             @if($produkSubKategori)
-                                {{$produkSubKategori->nama_sub_kategori}}
+                                {!! $produkSubKategori->nama_sub_kategori !!}
                             @else
-                                {{$produkKategori->nama_kategori}}
+                                {!! $produkKategori->nama_kategori !!}
                             @endif
                         </h1>
                     </div>
