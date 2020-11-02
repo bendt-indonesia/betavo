@@ -12,8 +12,8 @@
             <div class="item-content">
                 <?php
                 $desc = strip_tags($proList->deskripsi);
-                if(strlen($desc) > 200) {
-                    $desc = substr($desc,0,199);
+                if(strlen($desc) > 160) {
+                    $desc = substr($desc,0,159);
                 }
                 ?>
                 <p style="font-size: 12pt; min-height:80px">
