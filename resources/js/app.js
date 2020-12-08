@@ -92,8 +92,11 @@ $(document).on('ready', function () {
         centeredSlides: true,
     });
 
+
+    var youtubeId = $('#youtubeWrapper');
+
     swiperProduct.on('slideChange', function () {
-        if (swiperProduct.realIndex == 0) {
+        if (youtubeId.length > 0 && swiperProduct.realIndex == 0) {
             var wrapperWidth = $('#youtubeWrapper').width();
             swiperProduct.setTranslate(-1 * wrapperWidth);
         }
@@ -105,7 +108,6 @@ $(document).on('ready', function () {
         swiperProduct.autoplay.start();
     });
 
-    var youtubeId = $('#youtubeWrapper');
     if(youtubeId.length > 0) {
         var youtubeId = youtubeId[0].getAttribute('data-video-id');
         var youtubeIframe = '<iframe class="youtubeFullScreen" src="https://www.youtube.com/embed/'+youtubeId+'" ' +
