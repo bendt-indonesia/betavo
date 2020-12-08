@@ -151,7 +151,7 @@ $body = $title.', '.$link;
                                         </div>
                                         <div class="item-content">
                                             <p style="font-size: 12pt; min-height:80px">
-                                                {{$row->deskripsi}}
+                                                {{$row->meta_description}}
                                             </p>
                                             <a class="btn btn-line-a mt4" href="{{route('product',['slug'=>$row->slug])}}">
                                                 <span class="text">Lihat detail</span>
