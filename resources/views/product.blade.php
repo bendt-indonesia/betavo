@@ -97,6 +97,7 @@ $body = $title.', '.$link;
                             <div class="d-block">
                                 {!! $produk->deskripsi !!}
                             </div>
+                            @if(isset($produk->link_tokopedia) || isset($produk->link_shopee) || isset($produk->link_bukalapak))
                             <div class="d-block mt-4 mb-4">
                                 <p>Beli Produk:</p>
                                 @if(isset($produk->link_tokopedia))
@@ -109,6 +110,7 @@ $body = $title.', '.$link;
                                     <a class="mr-4 text-gray pointer" target="_blank" href="{{$produk->link_bukalapak}}"><img class="icon-mp" src="{{asset('/static/Betavo_Icons_Bukalapak2.png')}}" alt="Beli {{$produk->nama_produk}} di Bukalapak"></a>
                                 @endif
                             </div>
+                            @endif
                             <div class="d-block mt-4 mb-4">
                                 <p>Bagikan Produk:</p>
                                 <a class="mr-3 text-gray pointer" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{Request::url()}}"><img src="{{asset('/static/Betavo_Icons_Facebook2.svg')}}" class="icon-mp"></a>
