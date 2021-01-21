@@ -57,6 +57,7 @@
                             <form class="send_message_form message form" method="post" id="sendMessageToUs">
                                 <div class="row">
                                     <div class="col-12">
+                                        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
                                         <div class="form-group name">
                                             <input id="mes-name" name="name" type="text"
                                                    placeholder="Masukan nama anda"
