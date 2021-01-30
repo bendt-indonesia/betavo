@@ -173,3 +173,14 @@ main {
         }
     }
 }
+
+
+.ai-menu-content {
+    display: none;
+}
+
+.ai-menu:hover .ai-menu-content,
+.ai-menu:active .ai-menu-content, {
+    display: block;
+}
+

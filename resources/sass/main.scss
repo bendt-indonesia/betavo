@@ -2011,7 +2011,7 @@ input[type=text], input[type=password], input[type=email] {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1200px) {
     .navbar-top {
         position: fixed;
         top: 0;
@@ -2028,13 +2028,13 @@ input[type=text], input[type=password], input[type=email] {
     }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1200px) {
     .navbar-top .bd-right {
         border-right: 1px solid rgba(255, 255, 255, 0.2);
     }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1200px) {
     .navbar-top .navbar-group {
         display: flex;
         height: 100%;
@@ -2072,7 +2072,11 @@ input[type=text], input[type=password], input[type=email] {
     overflow-x: auto;
 }
 
-@media screen and (min-width: 992px) {
+.navbar-top .navbar-collapse .navbar-nav .nav-item {
+    padding: 16px;
+}
+
+@media screen and (min-width: 1200px) {
     .navbar-top .navbar-collapse {
         top: 0;
         position: relative;
@@ -2080,13 +2084,6 @@ input[type=text], input[type=password], input[type=email] {
         border-bottom: none;
         overflow: initial;
     }
-}
-
-.navbar-top .navbar-collapse .navbar-nav .nav-item {
-    padding: 16px;
-}
-
-@media screen and (min-width: 992px) {
     .navbar-top .navbar-collapse .navbar-nav .nav-item {
         padding: 0;
     }
@@ -2156,7 +2153,7 @@ input[type=text], input[type=password], input[type=email] {
     z-index: 10;
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1200px) {
     .navbar-top .navbar-toggler {
         position: relative;
         height: 100%;
@@ -2196,7 +2193,7 @@ input[type=text], input[type=password], input[type=email] {
     opacity: 0;
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1600px) {
     .navbar-top .navbar-social {
         position: relative;
         visibility: visible;

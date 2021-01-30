@@ -8,7 +8,7 @@
             <img class="light-logo " src="{{asset('img/betavo.png')}}" alt="Betavo Audio">
           </span>
             </a>
-            <div id="menu-icon-wrapper" class="menu-icon-wrapper navbar-toggler d-lg-none align-items-center navbar-dark" style="visibility: visible;"
+            <div id="menu-icon-wrapper" class="menu-icon-wrapper navbar-toggler d-xl-none align-items-center navbar-dark" style="visibility: visible;"
                  data-toggle="collapse"
                  data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                  aria-label="Toggle navigation"
@@ -20,17 +20,19 @@
                 </svg>
                 <button id="menu-icon-trigger" class="menu-icon-trigger" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"></button>
             </div>
-            <div class="collapse navbar-collapse d-lg-flex" id="navbarNav">
+            <div class="collapse navbar-collapse d-xl-flex" id="navbarNav">
                 <ul class="navbar-nav nav-menu flex-column flex-lg-row align-items-start">
                     @foreach(stores('category') as $item)
-                        <li class="nav-item fs-normal ai-menu  mx-0 px-0">
-                            <a href="{{route('category',['cat'=>$item->slug])}}"
-                               class="">{{$item->nama_kategori}}</a>
+                        <li class="nav-item fs-normal ai-menu mx-0 px-0">
+                            <a
+                                {{-- href="{{route('category',['cat'=>$item->slug])}}" --}}
+                               href="#"
+                               class="ai-menu-a">{{$item->nama_kategori}}</a>
                             <div class="ai-menu-content">
                                 @foreach($item->produk_sub_kategori as $subkategori)
                                     @if($item->is_active)
                                         <a href="{{route('category',['cat'=>$item->slug,'sub'=>$subkategori->slug])}}"
-                                           class="py-3 d-none d-lg-block ">{{$subkategori->nama_sub_kategori}}</a>
+                                           class="py-3 d-lg-block ">{{$subkategori->nama_sub_kategori}}</a>
                                     @endif
                                 @endforeach
                             </div>
@@ -44,12 +46,12 @@
                         <hr class="border border-white"/>
                         <div class="navbar-group group-bg w-100">
 
-                            <p>Apa yang anda ingin cari?</p>
+                            <p class="mb-0">Apa yang anda ingin cari?</p>
                             <form action="/cari" method="get">
-                                <Input type="text" name="keyword" class="text-white" placeholder="Contoh: Speaker">
+                                <input type="text" name="keyword" class="text-white" placeholder="Contoh: Speaker">
                             </form>
                         </div>
-                        <div class="w-100 d-block mx-0 px-0 d-lg-none mt-5">
+                        <div class="w-100 d-block mx-0 px-0 d-lg-none mt-3">
                             <ul class="icons mx-0 px-0">
 
                                 @if(conval('tokopedia'))
