@@ -13,7 +13,9 @@
                 <?php
                 $desc = str_replace('<h4>','<p>',$proList->deskripsi);
                 $desc = str_replace('</h4>','</p>',$desc);
-                $desc = strip_tags($desc,'<p>');
+                $desc = str_replace('<p>','',$desc);
+                $desc = str_replace('</p>','</br>',$desc);
+                $desc = strip_tags($desc,'<br>');
                 if(strlen($desc) > 160) {
                     $desc = substr($desc,0,159);
                 }
