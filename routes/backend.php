@@ -13,11 +13,7 @@ Route::group(['prefix' => 'account'], function() {
 });
 
 Route::resource('client_messages', 'ClientMessagesController',['as'=>'backend']);
-
-Route::resource('produk', 'ProdukController',[
-    'as'=>'backend']);
-
+Route::resource('produk', 'ProdukController',['as'=>'backend']);
 Route::resource('produk_kategori', 'ProdukKategoriController',['as'=>'backend']);
-
 Route::resource('produk_sub_kategori', 'ProdukSubKategoriController',['as'=>'backend']);
 

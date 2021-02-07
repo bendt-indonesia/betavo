@@ -11,7 +11,9 @@
             </div>
             <div class="item-content">
                 <?php
-                $desc = strip_tags($proList->deskripsi);
+                $desc = str_replace('<h4>','<p>',$proList->deskripsi);
+                $desc = str_replace('</h4>','</p>',$desc);
+                $desc = strip_tags($desc,'<p>');
                 if(strlen($desc) > 160) {
                     $desc = substr($desc,0,159);
                 }
