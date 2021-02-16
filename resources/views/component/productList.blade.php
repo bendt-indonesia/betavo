@@ -16,9 +16,6 @@
                 $desc = str_replace('<p>','',$desc);
                 $desc = str_replace('</p>','<br>',$desc);
                 $desc = strip_tags($desc,'<br>');
-                //if(strlen($desc) > 160) {
-                    //$desc = substr($desc,0,159);
-                //}
                 ?>
                 <p style="font-size: 12pt; min-height:80px">
                     <?php

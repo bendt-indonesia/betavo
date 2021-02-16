@@ -106,7 +106,9 @@ class ComproController extends Controller
             ->orWhereRaw('deskripsi like ?', ['%' . $keyword . '%'])->paginate(12);
 
         return view('search', [
-            'listProduk' => $hasilPencarianProduk,
+            'listProduk' => $hasilPencarianProduk->appends([
+                'keyword' => $keyword
+            ]),
             'keyword' => $keyword,
         ]);
     }
