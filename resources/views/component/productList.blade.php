@@ -22,17 +22,11 @@
                 ?>
                 <p style="font-size: 12pt; min-height:80px">
                     <?php
-                    $token = strtok($desc, "<br>");
+                    $test = explode("<br>", $desc);
+                    foreach ($test as $idx=>$line) {
+                        if($idx===6) break;
 
-                    while ($token !== false)
-                    {
-                        if(strlen($token) < 20) {
-                            break;
-                        } else {
-                            echo "$token<br>";
-                            $token = strtok("<br>");
-                        }
-
+                        echo $line.'<br>';
                     }
                     ?>
                 </p>
