@@ -14,14 +14,27 @@
                 $desc = str_replace('<h4>','<p>',$proList->deskripsi);
                 $desc = str_replace('</h4>','</p>',$desc);
                 $desc = str_replace('<p>','',$desc);
-                $desc = str_replace('</p>','</br>',$desc);
+                $desc = str_replace('</p>','<br>',$desc);
                 $desc = strip_tags($desc,'<br>');
-                if(strlen($desc) > 160) {
-                    $desc = substr($desc,0,159);
-                }
+                //if(strlen($desc) > 160) {
+                    //$desc = substr($desc,0,159);
+                //}
                 ?>
                 <p style="font-size: 12pt; min-height:80px">
-                    {!! $desc !!}
+                    <?php
+                    $token = strtok($desc, "<br>");
+
+                    while ($token !== false)
+                    {
+                        if(strlen($token) < 20) {
+                            break;
+                        } else {
+                            echo "$token<br>";
+                            $token = strtok("<br>");
+                        }
+
+                    }
+                    ?>
                 </p>
                 <a class="btn btn-line-a mt4 {{isset($btnLine) ? $btnLine : ''}}" href="{{route('product',['slug'=>$proList->slug])}}">
                     <span class="text">Lihat detail</span>
