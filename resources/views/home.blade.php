@@ -150,7 +150,7 @@
                                                     </div>
                                                     <div class="s-text anim-2">
                                                         <p>{{$kategori->deskripsi}}</p>
-                                                        <a class="btn btn-line-a mt-5" href="#">
+                                                        <a class="btn btn-line-a mt-5" href="{{route('category',['cat' => $kategori->slug])}}">
                                                             <span class="text ">Produk kami</span>
                                                             <span class="icon icon-menu icon-arrow-a icon-anim">
                                                                 <span class="arrow-right"></span>

@@ -9,7 +9,7 @@
                          alt="Betavo Logo">
                 </a>
                 @if(!isset($footer_bg))
-                <b class="copy d-block opacity-5 text-left">&copy; {{date('Y')}}</b>
+                <b class="copy d-block opacity-5 text-left">&copy; 2006 - {{date('Y')}}</b>
                 @endif
             </div>
         </div>
