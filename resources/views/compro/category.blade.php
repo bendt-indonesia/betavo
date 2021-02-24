@@ -277,7 +277,7 @@
                     <img class="img imgProduk" src="{{\Storage::url('about.jpg')}}">
                   </div>
                   <div class="item-header">
-                    <p class="min-height-product"><b class=" force-title">{{$produk->nama_produk}}</b></p>
+                    <p><b class=" force-title">{{$produk->nama_produk}}</b></p>
                   </div>
                   <div class="item-content">
 

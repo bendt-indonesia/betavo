@@ -148,7 +148,7 @@ $body = $title.', '.$link;
                                             <img class="img imgProduk" src="{{\Storage::url($row->image_url_1)}}">
                                         </div>
                                         <div class="item-header">
-                                            <p class="min-height-product"><b
+                                            <p class=""><b
                                                     class=" force-title">{{$row->nama_produk}}</b></p>
                                         </div>
                                         <div class="item-content">
