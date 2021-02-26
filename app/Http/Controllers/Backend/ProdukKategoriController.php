@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Produk;
+use App\Models\ProdukSubKategori;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -156,6 +158,11 @@ class ProdukKategoriController extends Controller
     public function destroy(Request $request, $id)
     {
         try {
+            $find = ProdukSubKategori::where('id_kategori',$id)->first();
+            if($find) {
+                $request->session()->flash('danger', 'Ketegori ini memiliki sub kategori, mohon untuk melakukan update terhadap sub kategori terlebih dahulu.');
+                return redirect()->route('backend.produk_kategori.index');
+            }
 
             $model = Model::findOrFail($id);
             $model->remove();

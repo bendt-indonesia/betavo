@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Store;
@@ -158,6 +159,11 @@ class ProdukSubKategoriController extends Controller
     {
         try {
 
+            $find = Produk::where('id_kategori',$id)->first();
+            if($find) {
+                $request->session()->flash('danger', 'Kateogri ini sedang digunakan dan tidak dapat dihapus');
+                return redirect()->route('backend.produk_sub_kategori.index');
+            }
             $model = Model::findOrFail($id);
             $model->remove();
             Store::forget('category');

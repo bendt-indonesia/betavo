@@ -5,7 +5,7 @@
                 <img class="img imgProduk" src="{{\Storage::url($proList->image_url_1)}}">
             </div>
             <div class="item-header">
-                <p class="">
+                <p>
                     <b class=" force-title">{{$proList->nama_produk}}</b>
                 </p>
             </div>
