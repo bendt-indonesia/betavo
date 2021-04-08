@@ -13,12 +13,14 @@ class ComproController extends Controller
     {
         $produkKategori = ProdukKategori::get();
         $produkSubKategori = ProdukSubKategori::get();
+        $featuredProduct = Produk::where('is_featured',1)->where('is_active',1)->get();
         return view('home', [
             "produkSubKategori" => $produkSubKategori,
             "produkKategori" => $produkKategori,
             'page' => \CMSPage::get('home'),
             'about' => \CMSPage::get('about'),
             'contact' => \CMSPage::get('contact'),
+            'featured' => $featuredProduct,
         ]);
     }
 

@@ -144,6 +144,25 @@ $(document).on('ready', function () {
         swiperProduct.autoplay.start();
     });
 
+    // var swiperProduct = new Swiper('.swiper-product', {
+    //     loop: true,
+    //     cssMode: false,
+    //     autoplay: {
+    //         delay: 3000,
+    //     },
+    //     disableOnInteraction: true,
+    //     navigation: {
+    //         nextEl: '.swiper-button-next',
+    //         prevEl: '.swiper-button-prev',
+    //     },
+    //     pagination: {
+    //         el: '.swiper-pagination'
+    //     },
+    //     mousewheel: true,
+    //     keyboard: true,
+    //     centeredSlides: true,
+    // });
+
     $('#kirimPesan').on('click',function(){
         var validator = $( "#sendMessageToUs" ).validate();
         if( validator.element( "#mes-name" ) && validator.element( "#mes-email" ) && validator.element( "#mes-text" )){
@@ -195,29 +214,24 @@ $(document).on('ready', function () {
     // 4. Sliders
     var swiperSliderA = new Swiper('.slider-a.swiper-container', {
         navigation: {
-            nextEl: '.swiper-container.slider-a .slider-next',
-            prevEl: '.swiper-container.slider-a .slider-prev',
+            nextEl: '.swiper-container.slider-b .slider-next',
+            prevEl: '.swiper-container.slider-b .slider-prev',
         },
         pagination: {
-            el: '.swiper-container.slider-a .swiper-pagination',
+            el: '.swiper-container.slider-b .swiper-pagination',
             clickable: true,
-            type: 'fraction',
+            // type: 'fraction',
             //   dynamicBullets: true,
         },
-        spaceBetween: 0,
-        slidesPerView: 1,
+        slidesPerView: 3,
         // loop: true, // loop to start
-        // freeMode: false,
-        // freeModeSticky: true,
-        // freeModeMomentumVelocityRatio: 2,
-        grabCursor: false,
-        autoplay: 5000,
+        effect: 'fade',
+        grabCursor: true,
+        autoplay: {
+            delay: 3000,
+        },
         speed: 1200,
         virtualTranslate: false,
-
-        thumbs: {
-            swiper: swiperSliderThumbsA
-        }
         // init: false, // set true to call it later
     });
 
@@ -243,6 +257,18 @@ $(document).on('ready', function () {
         virtualTranslate: false,
         // init: false, // set true to call it later
     });
+
+    var swiperMainHomepage = new Swiper('.swiper-main-page', {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        centeredSlides: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+
+
 
     // 5. Init video background
     var videoBg = $('.video-container video, .video-container object');
@@ -290,7 +316,7 @@ $(document).on('ready', function () {
     contextWindow.on('load', function () {
         $('#page-loader').addClass('p-hidden');
         $('.section').addClass('anim');
-        $('.scrollpage-container .section-home').addClass('active');
+        //$('.scrollpage-container .section-home').addClass('active');
         siteHeaderFooter.removeClass('loading-anim');
     });
 

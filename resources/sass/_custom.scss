@@ -15,6 +15,9 @@
 .bg-black-100{
     background-color: black;
 }
+.bg-cover-gradientradial-centered {
+    background-image: radial-gradient(circle closest-corner at 50% 50%, rgba(70, 69, 75, 0.1), #060618);
+}
 
 .page-loader {
     background: rgba(0,0,0,0.4);

@@ -21,13 +21,11 @@
                         <table class="table table-bordered m-t-3 dtb">
                             <thead>
                                 <tr>
-									<th>Urutan ke</th>
+									<th>Urutan</th>
 									<th>Sub Kategori</th>
 									<th>Nama Produk</th>
-									<th>Link Bukalapak</th>
-									<th>Link Shopee</th>
-									<th>Link Tokopedia</th>
-									<th>Is Active</th>
+									<th>Home?</th>
+									<th>Active</th>
 									<th>Last Update</th>
 
                                     <th width="1"></th>
@@ -39,9 +37,7 @@
 									<td>{{$item->prioritas}}</td>
 									<td>{{$item->produk_sub_kategori->nama_sub_kategori}}</td>
 									<td>{{$item->nama_produk}}</td>
-									<td>{{$item->link_bukalapak}}</td>
-									<td>{{$item->link_shopee}}</td>
-									<td>{{$item->link_tokopedia}}</td>
+									<td>{{\App\Enums\YesNo::$STATUS_LIST[$item->is_featured]}}</td>
 									<td>{{\App\Enums\YesNo::$STATUS_LIST[$item->is_active]}}</td>
 									<td>{{$item->updated_at}}</td>
 

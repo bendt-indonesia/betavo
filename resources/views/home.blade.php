@@ -9,7 +9,31 @@
 @endsection
 
 @section('content')
-    <!-- Begin of home -->
+
+    <section data-id="home" class="section section-slide fullsize-slide section-page fp-auto-height-responsive">
+        <div class="page-cover" data-color="">
+            <!-- Cover Background -->
+            <div class="cover-bg pos-abs size-full bg-img"
+                 data-image-src="{{el_url($page,'intro-background')}}"
+                 style="background-repeat: no-repeat; background-position: center center; background-size: cover;">
+            </div>
+            <div class="cover-bg pos-abs size-full bg-cover-gradientradial-centered opacity-9">
+            </div>
+        </div>
+        <div class="swiper-container swiper-main-page">
+            <div class="swiper-wrapper">
+                @foreach($featured as $produk)
+                <div class="swiper-slide">
+                    @include('component.productListHome',['proList'=>$produk ,'btnLine' => 'text-white'])
+                </div>
+                @endforeach
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+   {{-- <!-- Begin of home -->
     <section data-id="home" class="section section-home header-home">
         <div class="page-cover" data-color="">
             <!-- Cover Background -->
@@ -22,33 +46,9 @@
         </div>
         <div class="section-title title-right">
         </div>
-        <div class="section-content align-x-center align-y-center anim">
+        <div class="section-content align-x-center anim">
             <div class="width-medium">
-                <div class="row no-gutters">
-                    <div class="col-12 col-lg-6">
-                        <div class="home-left content-text">
-                            <!-- NOTE:QC minta hilangkan brand identity
-                              <h1 class="h-title font-title fw-normal anim-3 " style="font-size:3rem">{!! el($page,'intro-title') !!}</h1>
-                            -->
-                            <div class="text mb-5 anim-4">
-                                {!! el($page,'intro-description') !!}
-                            </div>
-                            @if(el($page,'intro-button-text'))
-                            <div class="btns-group anim-5">
-                                <a class="btn btn-line-a" href="{{el($page,'intro-button-url')}}">
-                                    <span class="text ">{{el($page,'intro-button-text')}}</span>
-                                    <span class="icon icon-menu icon-arrow-a icon-anim">
-                                      <span class="arrow-right"></span>
-                                    </span>
-                                </a>
-                            </div>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-6 d-flex min-h-full">
-                    </div>
-                </div>
-
+                Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.
             </div>
         </div>
         <div class="section-footer section-footer-a anim">
@@ -62,7 +62,7 @@
             </div>
         </div>
     </section>
-    <!-- End of home -->
+    <!-- End of home -->--}}
 
     <!-- Begin of about -->
     <section data-id="about" class="section section-page fp-auto-height-responsive">
@@ -168,26 +168,8 @@
                 @endforeach
                 </div>
                 <!-- end of .slide-item -->
-
-                <!-- slider arrows -->
-                <div class="slider-arrow">
-                    <a class="slider-prev btn btn-line-b slider-btn-top d-none d-lg-inline" href="#">
-                          <span class="icon icon-menu icon-arrow-a icon-anim">
-                            <span class="arrow-left"></span>
-                          </span>
-                        <span class="text">{{el($page,'previous')}}</span>
-                    </a>
-                    <a class="slider-next btn btn-line-b d-none d-lg-inline" href="#">
-                        <span class="text">{{el($page,'next')}}</span>
-                        <span class="icon icon-menu icon-arrow-a icon-anim">
-                <span class="arrow-right"></span>
-              </span>
-                    </a>
-                </div>
-
-                <!--slider pagination -->
+                @include('component.arrow')
                 <div class="slider-pagination swiper-pagination"></div>
-
             </div>
         </div>
 

@@ -93,70 +93,81 @@
 							           value="{{old("link_tokopedia")}}" placeholder='https://www.tokopedia.com'/>
 							</div>
 
-							<div class="form-group">
-							    <label for="image_url_1">Image Url 1</label>
 
-							    <input type="file" class="input-file" id="image_url_1"
-							           name="image_url_1"
-							           value="{{old("image_url_1")}}" />
-							    <label for="image_url_1" class="btn btn-file js-labelFile">
-							        <i class="icon fa fa-check"></i>
-							        <span class="js-fileName">Change file</span>
-							    </label>
-<small>Recommendation Size ( 750 x 750 ) px</small>
-							</div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="image_url_1">Image Url 1</label>
 
-							<div class="form-group">
-							    <label for="image_url_2">Image Url 2</label>
+                                        <input type="file" class="input-file" id="image_url_1"
+                                               name="image_url_1"
+                                               value="{{old("image_url_1")}}" />
+                                        <label for="image_url_1" class="btn btn-file js-labelFile">
+                                            <i class="icon fa fa-check"></i>
+                                            <span class="js-fileName">Change file</span>
+                                        </label>
+                                        <small>Recommendation Size ( 750 x 750 ) px</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="image_url_2">Image Url 2</label>
 
-							    <input type="file" class="input-file" id="image_url_2"
-							           name="image_url_2"
-							           value="{{old("image_url_2")}}" />
-							    <label for="image_url_2" class="btn btn-file js-labelFile">
-							        <i class="icon fa fa-check"></i>
-							        <span class="js-fileName">Change file</span>
-							    </label>
-<small>Recommendation Size ( 750 x 750 ) px</small>
-							</div>
+                                        <input type="file" class="input-file" id="image_url_2"
+                                               name="image_url_2"
+                                               value="{{old("image_url_2")}}" />
+                                        <label for="image_url_2" class="btn btn-file js-labelFile">
+                                            <i class="icon fa fa-check"></i>
+                                            <span class="js-fileName">Change file</span>
+                                        </label>
+                                        <small>Recommendation Size ( 750 x 750 ) px</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="image_url_3">Image Url 3</label>
 
-							<div class="form-group">
-							    <label for="image_url_3">Image Url 3</label>
+                                        <input type="file" class="input-file" id="image_url_3"
+                                               name="image_url_3"
+                                               value="{{old("image_url_3")}}" />
+                                        <label for="image_url_3" class="btn btn-file js-labelFile">
+                                            <i class="icon fa fa-check"></i>
+                                            <span class="js-fileName">Change file</span>
+                                        </label>
+                                        <small>Recommendation Size ( 750 x 750 ) px</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="image_url_4">Image Url 4</label>
 
-							    <input type="file" class="input-file" id="image_url_3"
-							           name="image_url_3"
-							           value="{{old("image_url_3")}}" />
-							    <label for="image_url_3" class="btn btn-file js-labelFile">
-							        <i class="icon fa fa-check"></i>
-							        <span class="js-fileName">Change file</span>
-							    </label>
-<small>Recommendation Size ( 750 x 750 ) px</small>
-							</div>
+                                        <input type="file" class="input-file" id="image_url_4"
+                                               name="image_url_4"
+                                               value="{{old("image_url_4")}}" />
+                                        <label for="image_url_4" class="btn btn-file js-labelFile">
+                                            <i class="icon fa fa-check"></i>
+                                            <span class="js-fileName">Change file</span>
+                                        </label>
+                                        <small>Recommendation Size ( 750 x 750 ) px</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="image_url_5">Image Url 5</label>
 
-							<div class="form-group">
-							    <label for="image_url_4">Image Url 4</label>
+                                        <input type="file" class="input-file" id="image_url_5"
+                                               name="image_url_5"
+                                               value="{{old("image_url_5")}}" />
+                                        <label for="image_url_5" class="btn btn-file js-labelFile">
+                                            <i class="icon fa fa-check"></i>
+                                            <span class="js-fileName">Change file</span>
+                                        </label>
+                                        <small>Recommendation Size ( 750 x 750 ) px</small>
+                                    </div>
+                                </div>
+                            </div>
 
-							    <input type="file" class="input-file" id="image_url_4"
-							           name="image_url_4"
-							           value="{{old("image_url_4")}}" />
-							    <label for="image_url_4" class="btn btn-file js-labelFile">
-							        <i class="icon fa fa-check"></i>
-							        <span class="js-fileName">Change file</span>
-							    </label>
-<small>Recommendation Size ( 750 x 750 ) px</small>
-							</div>
 
-							<div class="form-group">
-							    <label for="image_url_5">Image Url 5</label>
-
-							    <input type="file" class="input-file" id="image_url_5"
-							           name="image_url_5"
-							           value="{{old("image_url_5")}}" />
-							    <label for="image_url_5" class="btn btn-file js-labelFile">
-							        <i class="icon fa fa-check"></i>
-							        <span class="js-fileName">Change file</span>
-							    </label>
-<small>Recommendation Size ( 750 x 750 ) px</small>
-							</div>
 
 							<div class="form-group">
 							    <label for="youtube_video_url_1">Youtube Video URL</label>
@@ -164,23 +175,46 @@
 							           value="{{old("youtube_video_url_1")}}"/>
 							</div>
 
-							<div class="form-group">
-							    <label class="control-label">Is Active</label>
-							    <div class="form-group">
-							        @foreach(["No", "Yes"] as $key => $value)
-							            <div class="radio d-inline mr-3">
-							                <label>
-							                    <input type="radio"
-							                           name="is_active"
-							                           value="{{$key}}"
-							                        {{checked_radio('is_active', $key , 1)}}
-							                     required>
-							                    {{$value}}
-							                </label>
-							            </div>
-							        @endforeach
-							    </div>
-							</div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Is Active</label>
+                                        <div class="form-group">
+                                            @foreach(["No", "Yes"] as $key => $value)
+                                                <div class="radio d-inline mr-3">
+                                                    <label>
+                                                        <input type="radio"
+                                                               name="is_active"
+                                                               value="{{$key}}"
+                                                               {{checked_radio('is_active', $key , 1)}}
+                                                               required>
+                                                        {{$value}}
+                                                    </label>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Show in Homepage</label>
+                                        <div class="form-group">
+                                            @foreach(["No", "Yes"] as $key => $value)
+                                                <div class="radio d-inline mr-3">
+                                                    <label>
+                                                        <input type="radio"
+                                                               name="is_featured"
+                                                               value="{{$key}}"
+                                                               {{checked_radio('is_featured', $key , 1)}}
+                                                               required>
+                                                        {{$value}}
+                                                    </label>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
 
                         </div>
