@@ -1,7 +1,7 @@
 <a href="{{route('product',['slug'=>$proList->slug])}}" class="text-white link-plain">
     <div class="item-grid-a">
         <div class="item-img mt-4 mb-4 rounded-border">
-            <img class="img imgProduk" src="https://www.betavoaudio.com/storage/produk/name-16119057611632.jpg">
+            <img class="img imgProduk" src="{{Storage::url($proList->image_url_1)}}">
         </div>
         <div class="item-header">
             <p>
