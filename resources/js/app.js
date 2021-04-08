@@ -269,7 +269,7 @@ $(document).on('ready', function () {
         breakpoints: {
             // when window width is <= 999px
             767: {
-                slidesPerView: 3,
+                slidesPerView: 2,
                 spaceBetween: 20,
             },
             1024: {
