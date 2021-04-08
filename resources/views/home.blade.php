@@ -10,7 +10,7 @@
 
 @section('content')
 
-    <section data-id="home" class="section section-slide fullsize-slide section-page fp-auto-height-responsive">
+    <section data-id="home" class="section section-slide fullsize-slide section-page fp-auto-height-responsive new-homeslider">
         <div class="page-cover" data-color="">
             <!-- Cover Background -->
             <div class="cover-bg pos-abs size-full bg-img"

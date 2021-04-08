@@ -259,13 +259,28 @@ $(document).on('ready', function () {
     });
 
     var swiperMainHomepage = new Swiper('.swiper-main-page', {
-        slidesPerView: 4,
-        spaceBetween: 30,
+        slidesPerView: 1,
+        spaceBetween: 0,
         centeredSlides: true,
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
         },
+        breakpoints: {
+            // when window width is <= 999px
+            767: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
+            1340: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+            },
+        }
     });
 
 
