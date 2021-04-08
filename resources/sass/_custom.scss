@@ -18,7 +18,9 @@
 .bg-cover-gradientradial-centered {
     background-image: radial-gradient(circle closest-corner at 50% 50%, rgba(70, 69, 75, 0.1), #060618);
 }
-
+.new-homeslider {
+    margin-top: -40px !important;
+}
 .page-loader {
     background: rgba(0,0,0,0.4);
 }

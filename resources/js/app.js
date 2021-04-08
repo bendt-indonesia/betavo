@@ -259,8 +259,8 @@ $(document).on('ready', function () {
     });
 
     var swiperMainHomepage = new Swiper('.swiper-main-page', {
-        slidesPerView: 1,
-        spaceBetween: 0,
+        slidesPerView: 5,
+        spaceBetween: 30,
         centeredSlides: true,
         pagination: {
             el: '.swiper-pagination',
@@ -268,16 +268,20 @@ $(document).on('ready', function () {
         },
         breakpoints: {
             // when window width is <= 999px
-            767: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-            },
-            1024: {
+            768: {
                 slidesPerView: 3,
                 spaceBetween: 20,
             },
-            1340: {
+            1024: {
                 slidesPerView: 4,
+                spaceBetween: 20,
+            },
+            1366: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+            },
+            1600: {
+                slidesPerView: 5,
                 spaceBetween: 30,
             },
         }

@@ -1,3 +1,12 @@
+@media only screen and (max-width: 767px) {
+
+    .new-homeslider {
+        margin-top: 80px !important;
+    }
+    .swiper-main-page {
+        padding: 0 20px;
+    }
+}
 @media only screen and (max-width: 768px) {
     .modal-content {
         width: 100%;
@@ -16,13 +25,14 @@
         }
     }
 
-    .new-homeslider {
-        margin-top: 80px !important;
-    }
 
 }
 
 @media only screen and (max-width: 1024px) {
+
+    .swiper-main-page {
+        padding: 0 50px;
+    }
     .top-spacer {
         padding-top: 8rem;
     }
