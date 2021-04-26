@@ -122,6 +122,8 @@ $select_option = [
                             {!! CMSConfig::text('tokopedia') !!}
                             {!! CMSConfig::text('shopee') !!}
                             {!! CMSConfig::text('bukalapak') !!}
+                            {!! CMSConfig::text('blibi') !!}
+                            {!! CMSConfig::text('lazada') !!}
                         </div>
                         <div class="form-actions">
                             <button type="submit" class="btn btn-success">
