@@ -1,5 +1,10 @@
 @media only screen and (max-width: 767px) {
 
+    .main-title {
+        top: 20px;
+        left: 20px;
+        font-size: 25px;
+    }
     .new-homeslider {
         margin-top: 80px !important;
     }
@@ -28,8 +33,14 @@
 
 }
 
+@media only screen and (max-width: 1023px) {
+    .main-title {
+        top: 100px;
+        left: 40px;
+        font-size: 25px;
+    }
+}
 @media only screen and (max-width: 1024px) {
-
     .swiper-main-page {
         padding: 0 50px;
     }
@@ -71,6 +82,11 @@
 
 
 @media only screen and (max-width: 1199px) {
+
+    .main-title {
+        top: 30px;
+        left: 70px;
+    }
     .navbar-top .group-right .navbar-toggler {
         right: 70px;
         height: 66px;
@@ -105,12 +121,23 @@
     .navbar-group {
         max-width: 75%;
     }
+    .product-detail-padding {
+        padding-top: 100px;
+    }
 }
 
 
 @media only screen and (min-width: 1600px) {
+    .navbar-brand.logo-brand {
+        padding: 8px 12px;
+    }
     .navbar-group {
         max-width: 100%;
+    }
+
+    .main-title {
+        top: 120px;
+        left: 50px;
     }
 }
 

@@ -57,7 +57,7 @@
     display: inline-block;
     color:white;
   }
-  
+
   .ai-menu-content {
     display: none;
     position: absolute;
@@ -70,7 +70,7 @@
   .shadow{
     box-shadow:0 .1rem .5rem rgba(255,255,255,.15) !important;
   }
-  
+
   .ai-menu:hover .ai-menu-content {
     display: block;
   }
@@ -105,12 +105,12 @@
   <!-- BEGIN OF Header navigation of the page -->
   <!-- <header class="page-header loading-anim"> -->
     <!-- Begin of navbar-top -->
-    
+
     <nav id="navbar-menu" class="navbar navbar-top bd-bottom fixed-top">
       <div class="navbar-group">
         <a href="/" class="navbar-brand logo-brand bd-right">
           <span class="logo">
-            <img class="light-logo " src="./img/betavo.png" alt="Betavo Audio">
+            <img class="light-logo " src="./img/betavo-r.png" alt="Betavo Audio">
           </span>
         </a>
           <button class="navbar-toggler d-lg-none align-items-center navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -132,10 +132,10 @@
             </li>
             @endforeach
             <li class="nav-item fs-normal ai-menu d-block d-lg-none  mx-0 px-0">
-           
+
               <hr class="border border-white" />
               <div class="navbar-group group-bg w-100">
-                
+
                 <p>Apa yang anda ingin cari?</p>
                 <form action="/cari" method="get">
                 <Input type="text" name="keyword" class="text-white" placeholder="Contoh: Speaker">
@@ -211,16 +211,16 @@
     </nav>
 
     <!-- End of navbar-top -->
-    
+
 
   </header>
   <!-- END OF Header navigation of the page -->
 
   <!-- BEGIN OF page main content -->
- 
+
 
   <main class="page-main top-spacer" id="mainpage">
-    
+
     <section data-id="main-features" class="section section-page ">
       <div class="section-cover"></div>
       <div class="section-margin-off algo-mt-5" >
@@ -288,7 +288,7 @@
         <div class="h-left anim-2">
           <div>
             <a href="#" class="d-block">
-              <img class="light-logo" style="width:180px;" src="./img/betavo.png" alt="Logo">
+              <img class="light-logo" style="width:180px;" src="./img/betavo-r.png" alt="Logo">
             </a>
             <b class="copy d-block opacity-5 text-left">&copy; {{\Carbon\Carbon::now()->year}}</b>
 
@@ -302,7 +302,7 @@
       </div>
       <!-- end of home footer -->
 
-        
+
     </div>
     </div>
   </main>

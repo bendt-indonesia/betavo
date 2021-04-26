@@ -13,7 +13,7 @@
 ?>
 @extends('layouts.backend')
 
-@section('title', 'My Account')
+@section('meta_title', 'My Account')
 
 @section('content')
     <form method="post">

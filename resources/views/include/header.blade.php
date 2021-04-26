@@ -5,7 +5,7 @@
         <div class="navbar-group">
             <a href="/" class="navbar-brand logo-brand bd-right">
           <span class="logo">
-            <img class="light-logo " src="{{asset('img/betavo.png')}}" alt="Betavo Audio">
+            <img class="light-logo " src="{{asset('img/betavo-r.png')}}" alt="Betavo Audio">
           </span>
             </a>
             <div id="menu-icon-wrapper" class="menu-icon-wrapper navbar-toggler d-xl-none align-items-center navbar-dark" style="visibility: visible;"
@@ -82,6 +82,24 @@
                                     </li>
                                 @endif
 
+                                @if(conval('lazada'))
+                                    <li class="d-inline mr-3">
+                                        <a href="{{conval('lazada')}}"
+                                           class="d-inline"><img src="{{asset('/img/lazada.png')}}"
+                                                                 class="img-fluid link-nav icon-menu-header">
+                                        </a>
+                                    </li>
+                                @endif
+
+                                @if(conval('blibli'))
+                                    <li class="d-inline mr-3">
+                                        <a href="{{conval('blibli')}}"
+                                           class="d-inline"><img src="{{asset('/img/blibli.png')}}"
+                                                                 class="img-fluid link-nav icon-menu-header">
+                                        </a>
+                                    </li>
+                                @endif
+
                                 @if(conval('facebook'))
                                     <li class="d-inline mr-3">
                                         <a href="{{conval('facebook')}}"
@@ -111,35 +129,49 @@
                 <ul class="icons">
                     @if(conval('tokopedia'))
                         <li>
-                            <a href="{{conval('tokopedia')}}" class="h-100 d-flex align-items-center" target="_blank">
+                            <a href="{{conval('tokopedia')}}" class="h-100 d-flex align-items-center" target="_blank" title="Tokopedia - Betavo Audio">
                                 <img src="{{asset('/img/Betavo_Tokopedia.png')}}" class="img-fluid link-nav">
                             </a>
                         </li>
                     @endif
                     @if(conval('shopee'))
                         <li>
-                            <a href="{{conval('shopee')}}" class="h-100 d-flex align-items-center" target="_blank">
+                            <a href="{{conval('shopee')}}" class="h-100 d-flex align-items-center" target="_blank" title="Shopee - Betavo Audio">
                                 <img src="{{asset('/img/Betavo_Shopee.png')}}" class="img-fluid link-nav">
                             </a>
                         </li>
                     @endif
                     @if(conval('bukalapak'))
                         <li>
-                            <a href="{{conval('bukalapak')}}" class="h-100 d-flex align-items-center" target="_blank">
+                            <a href="{{conval('bukalapak')}}" class="h-100 d-flex align-items-center" target="_blank" title="Bukalapak - Betavo Audio">
                                 <img src="{{asset('/img/Betavo_Bukalapak.png')}}" class="img-fluid link-nav">
+                            </a>
+                        </li>
+                    @endif
+                    @if(conval('lazada'))
+                        <li>
+                            <a href="{{conval('lazada')}}" class="h-100 d-flex align-items-center" target="_blank" title="Lazada - Betavo Audio">
+                                <img src="{{asset('/img/lazada.png')}}" class="img-fluid link-nav">
+                            </a>
+                        </li>
+                    @endif
+                    @if(conval('blibli'))
+                        <li>
+                            <a href="{{conval('blibli')}}" class="h-100 d-flex align-items-center" target="_blank" title="Bli-bli - Betavo Audio">
+                                <img src="{{asset('/img/blibli.png')}}" class="img-fluid link-nav">
                             </a>
                         </li>
                     @endif
                     @if(conval('facebook'))
                         <li>
-                            <a href="{{conval('facebook')}}" class="h-100 d-flex align-items-center" target="_blank">
+                            <a href="{{conval('facebook')}}" class="h-100 d-flex align-items-center" target="_blank" title="Facebook  - Betavo Audio">
                                 <img src="{{asset('/img/facebook.png')}}" class="img-fluid link-nav">
                             </a>
                         </li>
                     @endif
                     @if(conval('instagram'))
                         <li>
-                            <a href="{{conval('instagram')}}" class="h-100 d-flex align-items-center" target="_blank">
+                            <a href="{{conval('instagram')}}" class="h-100 d-flex align-items-center" target="_blank" title="Instagram - Betavo Audio">
                                 <img src="{{asset('/img/ig.png')}}" class="img-fluid link-nav">
                             </a>
                         </li>

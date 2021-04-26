@@ -277,14 +277,18 @@ $(document).on('ready', function () {
                 spaceBetween: 20,
             },
             1366: {
-                slidesPerView: 4,
-                spaceBetween: 30,
-            },
-            1600: {
                 slidesPerView: 5,
                 spaceBetween: 30,
             },
-        }
+            1600: {
+                slidesPerView: 6,
+                spaceBetween: 30,
+            },
+        },
+        autoplay: {
+            delay: 3000,
+        },
+        speed: 1200,
     });
 
 

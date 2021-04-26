@@ -106,7 +106,7 @@
                                                 <table class="center" cellpadding="0" cellspacing="0">
                                                     <tr>
                                                         <td style="line-height:0;">
-                                                            <a target="_blank" style="text-decoration:none;" href="{{url('/')}}"><img src="{{url('/images/logo2.png')}}" border="0" align="left" vspace="0" hspace="0" /></a>
+                                                            <a target="_blank" style="text-decoration:none;" href="{{url('/')}}"><img src="{{url('/images/logo2-r.png')}}" border="0" align="left" vspace="0" hspace="0" /></a>
                                                         </td>
                                                     </tr>
                                                 </table>

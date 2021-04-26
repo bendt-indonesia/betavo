@@ -1,7 +1,7 @@
 @extends('layouts.backend', [
 
 ])
-@section('title', 'Update List Produk ( ID: '.$model->id.' )')
+@section('meta_title', 'Update List Produk ( ID: '.$model->id.' )')
 @section('title_right')
     <div class="pull-right">
         <a href="{{route('backend.produk.index')}}" class="btn btn-info btn-sm">
@@ -68,9 +68,17 @@
 							           value="{{old("nama_produk",$model->nama_produk)}}" required/>
 							</div>
 
+                            <div class="form-group">
+                                <label for="short_description">Deskripsi Singkat</label>
+                                <textarea rows="6" class="form-control"
+                                          id="short_description"
+                                          name="short_description"
+                                          required>{{old("short_description",$model->short_description)}}</textarea>
+                            </div>
+
 							<div class="form-group">
 							    <label for="deskripsi">Deskripsi Produk</label>
-							    <textarea rows="4" class="form-control tmce"
+							    <textarea rows="7" class="form-control tmce"
 							         id="deskripsi"
 							         name="deskripsi"
 							          required>{{old("deskripsi",$model->deskripsi)}}</textarea>

@@ -2,7 +2,7 @@
 
 ])
 
-@section('title', 'Pesan Pengunjung List')
+@section('meta_title', 'Pesan Pengunjung List')
 @section('title_right')
 @endsection
 

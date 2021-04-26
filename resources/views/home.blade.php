@@ -10,8 +10,9 @@
 
 @section('content')
 
-    <section data-id="home" class="section section-slide new-homeslider fullsize-slide section-page fp-auto-height-responsive">
+    <section data-id="home" class="section section-slide new-homeslider fullsize-slide section-page">
         <div class="page-cover" data-color="">
+            <h2 class="main-title">New Arrival</h2>
             <!-- Cover Background -->
             <div class="cover-bg pos-abs size-full bg-img"
                  data-image-src="{{el_url($page,'intro-background')}}"

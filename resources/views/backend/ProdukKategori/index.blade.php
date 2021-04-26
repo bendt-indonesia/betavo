@@ -2,7 +2,7 @@
 
 ])
 
-@section('title', 'Kategori Produk List')
+@section('meta_title', 'Kategori Produk List')
 @section('title_right')
     <div class="pull-right">
         <a href="{{route('backend.produk_kategori.create')}}" class="btn btn-success btn-sm">

@@ -2362,6 +2362,8 @@ input[type=text], input[type=password], input[type=email] {
     .navbar-sidebar .nav-menu li .text,
     .navbar-sidebar .nav-menu .nav-item .text {
         display: block;
+        padding: 7px;
+        background: rgba(0,0,0,0.5);
     }
 }
 

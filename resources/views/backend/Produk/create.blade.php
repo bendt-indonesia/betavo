@@ -1,7 +1,7 @@
 @extends('layouts.backend', [
 
 ])
-@section('title', 'Add New List Produk')
+@section('meta_title', 'Add New List Produk')
 @section('title_right')
     <div class="pull-right">
         <a href="{{route('backend.produk.index')}}" class="btn btn-info btn-sm">
@@ -66,6 +66,14 @@
 							    <input type="text" class="form-control " id="nama_produk" name="nama_produk"
 							           value="{{old("nama_produk")}}" required/>
 							</div>
+
+                            <div class="form-group">
+                                <label for="short_description">Deskripsi Singkat</label>
+                                <textarea rows="6" class="form-control"
+                                          id="short_description"
+                                          name="short_description"
+                                          required>{{old("short_description")}}</textarea>
+                            </div>
 
 							<div class="form-group">
 							    <label for="deskripsi">Deskripsi Produk</label>

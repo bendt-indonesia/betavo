@@ -13,7 +13,7 @@ use App\Data\Produk\RequestUpdateProduk;
 
 class ProdukController extends Controller
 {
-    
+
 
     const PREFIX = 'backend.Produk';
 

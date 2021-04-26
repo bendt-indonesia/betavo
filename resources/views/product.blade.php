@@ -3,7 +3,7 @@
     "meta_desc" => $produk->meta_description,
     "meta_keys" => $produk->meta_keywords,
     "main" => true,
-    "main_class" => 'white-page pt-150',
+    "main_class" => 'white-page',
     "footer_hide" => true,
 ])
 
@@ -43,11 +43,32 @@ $body = $title.', '.$link;
 @section('content')
     <section data-id="main-features" class="section section-page top-margin">
         <div class="section-cover"></div>
-        <div class="section-margin-off" >
-            <div class="section-content mt-5 mb-5 align-x-center">
+        <div class="section-margin-off " >
+            <div class="section-content mt-5 mb-5 align-x-center product-detail-padding">
                 <div class="container">
                     <div class="row">
                         <div class="p-0 col-12 col-lg-6">
+                            <div class="d-block d-md-none">
+                                <hr class="m-0 mt-4 mb-4"/>
+                                @if(isset($produk->produk_sub_kategori->produk_kategori))
+                                    <a href="{{route('category',['cat' => $produk->produk_sub_kategori->produk_kategori->slug])}}" class="text-gray">
+                                        {{$produk->produk_sub_kategori->produk_kategori->nama_kategori}}
+                                    </a>
+                                    <span class="icon icon-menu icon-arrow-a icon-anim">
+                                        &raquo;
+                                    </span>
+                                @endif
+                                <a class="text-gray"
+                                   href="{{route('category',['cat' => $produk->produk_sub_kategori->produk_kategori->slug, 'sub' => $produk->produk_sub_kategori->slug])}}">
+                                    {{$produk->produk_sub_kategori->nama_sub_kategori}}
+                                </a>
+
+                                <h1 class="h-title pt-10">
+                                    {{ $produk->nama_produk }}
+                                </h1>
+
+                                <hr class="m-0 mt-4"/>
+                            </div>
                             <div class="swiper-container swiper-product">
 
                                 <div class="swiper-wrapper d-flex align-items-center">
@@ -73,28 +94,36 @@ $body = $title.', '.$link;
                                 <!-- Add Pagination -->
                                 <div class="swiper-pagination" ></div>
                             </div>
+
+                            <div class="mt-4 text-center">
+                                <img class="d-inline" src="{{asset('img/betavo-kominfo.png')}}" style="width:auto !important; height: 85px">
+                                <img class="d-inline" src="{{asset('static/qr.png')}}" style="width:auto !important; height:85px">
+
+                            </div>
                         </div>
                         <div class="p-0 p-md-4 col-12 col-lg-6">
-                            <hr class="m-0 mt-4 mb-4"/>
-                            @if(isset($produk->produk_sub_kategori->produk_kategori))
-                                <a href="{{route('category',['cat' => $produk->produk_sub_kategori->produk_kategori->slug])}}" class="text-gray">
-                                    {{$produk->produk_sub_kategori->produk_kategori->nama_kategori}}
+                            <div class="d-none d-md-block">
+                                <hr class="m-0 mt-4 mb-4"/>
+                                @if(isset($produk->produk_sub_kategori->produk_kategori))
+                                    <a href="{{route('category',['cat' => $produk->produk_sub_kategori->produk_kategori->slug])}}" class="text-gray">
+                                        {{$produk->produk_sub_kategori->produk_kategori->nama_kategori}}
+                                    </a>
+                                    <span class="icon icon-menu icon-arrow-a icon-anim">
+                                        &raquo;
+                                    </span>
+                                @endif
+                                <a class="text-gray"
+                                   href="{{route('category',['cat' => $produk->produk_sub_kategori->produk_kategori->slug, 'sub' => $produk->produk_sub_kategori->slug])}}">
+                                    {{$produk->produk_sub_kategori->nama_sub_kategori}}
                                 </a>
-                                <span class="icon icon-menu icon-arrow-a icon-anim">
-                                    &raquo;
-                                </span>
-                            @endif
-                            <a class="text-gray"
-                               href="{{route('category',['cat' => $produk->produk_sub_kategori->produk_kategori->slug, 'sub' => $produk->produk_sub_kategori->slug])}}">
-                                {{$produk->produk_sub_kategori->nama_sub_kategori}}
-                            </a>
 
-                            <h1 class="h-title pt-10">
-                                {{ $produk->nama_produk }}
-                            </h1>
+                                <h1 class="h-title pt-10">
+                                    {{ $produk->nama_produk }}
+                                </h1>
 
-                            <hr class="m-0 mt-4 mb-4"/>
-                            <div class="d-block">
+                                <hr class="m-0 mt-4"/>
+                            </div>
+                            <div class="d-block mt-4 ">
                                 {!! $produk->deskripsi !!}
                             </div>
                             @if(isset($produk->link_tokopedia) || isset($produk->link_shopee) || isset($produk->link_bukalapak))
@@ -153,7 +182,7 @@ $body = $title.', '.$link;
                                         </div>
                                         <div class="item-content">
                                             <p style="font-size: 12pt; min-height:80px">
-                                                {{substr(strip_tags($row->deskripsi),0,100)}}
+                                                {!! nl2br($row->short_description) !!}
                                             </p>
                                             <a class="btn btn-line-a mt4" href="{{route('product',['slug'=>$row->slug])}}">
                                                 <span class="text">Lihat detail</span>

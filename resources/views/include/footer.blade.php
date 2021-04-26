@@ -5,7 +5,7 @@
             <div>
                 <a href="#" class="d-block">
                     <img class="light-logo" style="width:180px;"
-                         src="{{asset('/img/betavo.png')}}"
+                         src="{{asset('/img/betavo-r.png')}}"
                          alt="Betavo Logo">
                 </a>
                 @if(!isset($footer_bg))

@@ -13,7 +13,7 @@
 ?>
 @extends('layouts.backend')
 
-@section('title', 'Change Password')
+@section('meta_title', 'Change Password')
 
 @section('content')
     <form method="post" enctype="multipart/form-data">

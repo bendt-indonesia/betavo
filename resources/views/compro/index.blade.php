@@ -90,7 +90,7 @@
       <div class="navbar-group">
         <a href="/" class="navbar-brand logo-brand bd-right">
           <span class="logo">
-            <img class="light-logo " src="./img/betavo.png" alt="Betavo Audio">
+            <img class="light-logo " src="./img/betavo-r.png" alt="Betavo Audio">
           </span>
         </a>
           <button class="navbar-toggler d-lg-none align-items-center navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -282,7 +282,7 @@
           <div class="h-left anim-2">
             <div>
               <a href="#" class="d-block">
-                <img class="light-logo" style="width:180px;" src="./img/betavo.png" alt="Logo">
+                <img class="light-logo" style="width:180px;" src="./img/betavo-r.png" alt="Logo">
               </a>
               <b class="copy d-block opacity-5 text-left">&copy; {{\Carbon\Carbon::now()->year}}</b>
 
@@ -618,7 +618,7 @@
           <div class="h-left anim-2">
             <div>
               <a href="#" class="d-block">
-                <img class="light-logo" style="width:180px;" src="./img/betavo.png" alt="Logo">
+                <img class="light-logo" style="width:180px;" src="./img/betavo-r.png" alt="Logo">
               </a>
               <b class="copy d-block opacity-5 text-left">&copy; {{\Carbon\Carbon::now()->year}}</b>
 

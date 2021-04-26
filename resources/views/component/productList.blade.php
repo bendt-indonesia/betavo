@@ -10,22 +10,8 @@
                 </p>
             </div>
             <div class="item-content">
-                <?php
-                $desc = str_replace('<h4>','<p>',$proList->deskripsi);
-                $desc = str_replace('</h4>','</p>',$desc);
-                $desc = str_replace('<p>','',$desc);
-                $desc = str_replace('</p>','<br>',$desc);
-                $desc = strip_tags($desc,'<br>');
-                ?>
                 <p style="font-size: 12pt; min-height:80px">
-                    <?php
-                    $test = explode("<br>", $desc);
-                    foreach ($test as $idx=>$line) {
-                        if($idx===6) break;
-
-                        echo $line.'<br>';
-                    }
-                    ?>
+                    {!! nl2br($proList->short_description) !!}
                 </p>
                 <a class="btn btn-line-a mt4 {{isset($btnLine) ? $btnLine : ''}}" href="{{route('product',['slug'=>$proList->slug])}}">
                     <span class="text">Lihat detail</span>

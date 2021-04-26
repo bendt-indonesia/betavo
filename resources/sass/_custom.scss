@@ -18,13 +18,19 @@
 .bg-cover-gradientradial-centered {
     background-image: radial-gradient(circle closest-corner at 50% 50%, rgba(70, 69, 75, 0.1), #060618);
 }
-.new-homeslider {
-    margin-top: -40px !important;
+.main-title {
+    position: absolute;
+    top: 90px;
+    left: 50px;
+    z-index:2;
+    font-family:  gotham !important;
 }
 .page-loader {
     background: rgba(0,0,0,0.4);
 }
-
+.navbar-nav {
+    background: rgba(0,0,0,0.5);
+}
 .page-cover.scrolled.contact-section {
     z-index: 0;
     &::before {

@@ -1,7 +1,7 @@
 @extends('layouts.backend', [
 
 ])
-@section('title', 'Add New Pesan Pengunjung')
+@section('meta_title', 'Add New Pesan Pengunjung')
 @section('title_right')
     <div class="pull-right">
         <a href="{{route('backend.client_messages.index')}}" class="btn btn-info btn-sm">

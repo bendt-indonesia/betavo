@@ -323,7 +323,7 @@
                 <div class="h-left anim-2">
                     <div>
                         <a href="#" class="d-block">
-                            <img class="light-logo" style="width:180px;" src="./img/betavo.png" alt="Logo">
+                            <img class="light-logo" style="width:180px;" src="./img/betavo-r.png" alt="Logo">
                         </a>
                         <b class="copy d-block opacity-5 text-left">&copy; {{\Carbon\Carbon::now()->year}}</b>
                     </div>

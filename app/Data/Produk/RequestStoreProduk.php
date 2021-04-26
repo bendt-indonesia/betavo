@@ -32,6 +32,7 @@ class RequestStoreProduk extends FormRequest
 			'prioritas' => 'required|numeric|min:0|regex:/^\d*(\.\d{1,1000})?$/',
 			'id_kategori' => 'required|exists:produk_sub_kategori,id',
 			'nama_produk' => 'required|max:150',
+			'short_description' => 'nullable|max:1000',
 			'deskripsi' => 'required|max:65500',
 			'link_bukalapak' => 'max:1000',
 			'link_shopee' => 'max:1000',

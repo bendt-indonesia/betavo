@@ -1,7 +1,7 @@
 @extends('layouts.backend', [
 
 ])
-@section('title', 'Add New Kategori Produk')
+@section('meta_title', 'Add New Kategori Produk')
 @section('title_right')
     <div class="pull-right">
         <a href="{{route('backend.produk_kategori.index')}}" class="btn btn-info btn-sm">
