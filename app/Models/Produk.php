@@ -15,7 +15,7 @@ class Produk extends BaseModel {
 
 	const SLUG_FROM_COLUMN = 'nama_produk';
 
-	protected $files = ['image_url_1','image_url_2','image_url_3','image_url_4','image_url_5'];
+	protected $files = ['image_url_1','image_url_2','image_url_3','image_url_4','image_url_5','qr_code'];
 
 	const FILE_PATH = "/produk/";
 
