@@ -95,11 +95,12 @@ $body = $title.', '.$link;
                                 <div class="swiper-pagination" ></div>
                             </div>
 
+                            @if($produk->qr_code != '')
                             <div class="mt-4 text-center">
                                 <img class="d-inline" src="{{asset('img/betavo-kominfo.png')}}" style="width:auto !important; height: 85px">
-                                <img class="d-inline" src="{{asset('static/qr.png')}}" style="width:auto !important; height:85px">
-
+                                <img class="d-inline" src="{{Storage::url($produk->qr_code)}}" style="width:auto !important; height:85px">
                             </div>
+                            @endif
                         </div>
                         <div class="p-0 p-md-4 col-12 col-lg-6">
                             <div class="d-none d-md-block">

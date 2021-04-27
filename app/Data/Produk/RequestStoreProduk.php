@@ -42,6 +42,7 @@ class RequestStoreProduk extends FormRequest
 			'image_url_3' => '',
 			'image_url_4' => '',
 			'image_url_5' => '',
+			'qr_code' => '',
 			'youtube_video_url_1' => 'max:150',
 			'is_active' => 'required|in:0,1',
 			'is_featured' => 'required|in:0,1',

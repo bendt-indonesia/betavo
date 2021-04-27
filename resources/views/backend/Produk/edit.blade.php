@@ -186,6 +186,23 @@
                                         <small>Recommendation Size ( 750 x 750 ) px</small>
                                     </div>
                                 </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="qr_code">QR Code (Kominfo)</label>
+                                        @if($model->qr_code != "")
+                                            <a class="btn btn-sm btn-primary" href="{{Storage::url($model->qr_code)}}" target="_blank">View File</a>								@endif
+
+
+                                        <input type="file" class="input-file" id="qr_code"
+                                               name="qr_code"
+                                               value="{{old("qr_code")}}" />
+                                        <label for="qr_code" class="btn btn-file js-labelFile">
+                                            <i class="icon fa fa-check"></i>
+                                            <span class="js-fileName">Change file</span>
+                                        </label>
+                                        <small>Recommendation Size ( 100 x 100 ) px</small>
+                                    </div>
+                                </div>
                             </div>
 
 
